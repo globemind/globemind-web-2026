@@ -258,6 +258,7 @@ body {
     color: #666;
     margin-bottom: 2rem;
     line-height: 1.8;
+    text-align: justify;
 }
 
 .hero-buttons {
@@ -397,9 +398,23 @@ body {
     border-color: var(--primary-blue);
 }
 
+.value-card:hover .card-icon {
+    /* background: linear-gradient(135deg, rgba(57, 107, 173, 0.15), rgba(121, 169, 214, 0.15)); */
+    transform: scale(1.05);
+}
+
 .card-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    /* background: linear-gradient(135deg, rgba(57, 107, 173, 0.1), rgba(121, 169, 214, 0.1)); */
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    width: 100%;
 }
 
 .card-title {
@@ -564,10 +579,21 @@ body {
     border-color: var(--primary-blue);
 }
 
-.client-placeholder {
-    color: #999;
-    font-weight: 500;
-    text-align: center;
+.client-logo-img {
+    max-width: 90%;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.client-logo:hover .client-logo-img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 /* Stack Section */
@@ -933,6 +959,12 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .card-icon {
+        font-size: 4rem;
+        width: 90px;
+        height: 90px;
+    }
+
     .stats-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -981,6 +1013,12 @@ body {
 
     .clients-grid {
         grid-template-columns: 1fr;
+    }
+
+    .card-icon {
+        font-size: 3.5rem;
+        width: 80px;
+        height: 80px;
     }
 }
 
