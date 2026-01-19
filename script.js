@@ -70,9 +70,9 @@ dropdownToggles.forEach(toggle => {
         // Only prevent default on mobile
         if (window.innerWidth <= 768) {
             e.preventDefault();
-            const dropdown = toggle.nextElementSibling;
-            if (dropdown) {
-                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            const navDropdown = toggle.closest('.nav-dropdown');
+            if (navDropdown) {
+                navDropdown.classList.toggle('active');
             }
         }
     });
