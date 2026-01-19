@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GlobeMind - Experiencia en ALyCs (Aplicaciones y Consultorías). Soluciones especializadas que transforman negocios.">
+    <meta name="keywords" content="ALyCs, aplicaciones, consultorías, desarrollo de software, GlobeMind">
+    <meta property="og:title" content="GlobeMind - ALyCs">
+    <meta property="og:description" content="Experiencia de GlobeMind en Aplicaciones y Consultorías. Soluciones especializadas que transforman negocios.">
+    <meta property="og:type" content="website">
+    <title>GlobeMind - ALyCs | Aplicaciones y Consultorías</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://globemind.com/alycs.html">
+    <link rel="icon" type="image/png" href="img/globeMind_logo.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        .page-header {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #396bad 0%, #79a9d6 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .experience-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(57, 107, 173, 0.15);
+            border-color: var(--primary-blue);
+        }
+
+        .experience-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .experience-description {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 80px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            color: var(--white);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.125rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .cta-section {
+            padding: 80px 0;
+            background: var(--white);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="img/GlobeMind-horizontal-grande.png" alt="GlobeMind" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                <li class="nav-dropdown">
+                    <a href="index.html#servicios" class="nav-link dropdown-toggle">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="alycs.html" class="dropdown-link">ALyCs</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#clientes" class="nav-link">Clientes</a></li>
+                <li><a href="index.html#stack" class="nav-link">Stack</a></li>
+            </ul>
+            <a href="index.html#contacto" class="nav-cta">Trabajemos juntos</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="fade-in">ALyCs</h1>
+            <p class="fade-in">Aplicaciones y Consultorías - Experiencia que transforma negocios</p>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Nuestra Experiencia en ALyCs</h2>
+            <p class="section-description fade-in">
+                En <strong>GlobeMind</strong>, combinamos el desarrollo de aplicaciones de clase mundial con consultoría estratégica especializada. Nuestra experiencia en <strong>ALyCs (Aplicaciones y Consultorías)</strong> nos permite ofrecer soluciones integrales que no solo resuelven problemas técnicos, sino que también impulsan el crecimiento y la transformación digital de nuestros clientes.
+            </p>
+            <p class="section-description fade-in">
+                Con más de una década de experiencia, hemos desarrollado y consultado en proyectos de diversos sectores, desde startups innovadoras hasta empresas establecidas, siempre con un enfoque en la calidad, la escalabilidad y el valor de negocio.
+            </p>
+        </div>
+    </section>
+
+    <!-- Experience Areas Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Áreas de Especialización</h2>
+            <div class="experience-grid">
+                <div class="experience-card fade-in">
+                    <div class="experience-icon">📱</div>
+                    <h3 class="experience-title">Aplicaciones Móviles</h3>
+                    <p class="experience-description">
+                        Desarrollo de aplicaciones nativas e híbridas para iOS y Android. Creamos experiencias de usuario excepcionales que conectan con tus clientes en cualquier momento y lugar.
+                    </p>
+                </div>
+                <div class="experience-card fade-in">
+                    <div class="experience-icon">🌐</div>
+                    <h3 class="experience-title">Aplicaciones Web</h3>
+                    <p class="experience-description">
+                        Plataformas web modernas, escalables y de alto rendimiento. Desde aplicaciones empresariales hasta portales de e-commerce, construimos soluciones que crecen con tu negocio.
+                    </p>
+                </div>
+                <div class="experience-card fade-in">
+                    <div class="experience-icon">🤖</div>
+                    <h3 class="experience-title">Aplicaciones con IA</h3>
+                    <p class="experience-description">
+                        Integración de inteligencia artificial y machine learning para automatizar procesos, generar insights valiosos y crear experiencias personalizadas para tus usuarios.
+                    </p>
+                </div>
+                <div class="experience-card fade-in">
+                    <div class="experience-icon">💼</div>
+                    <h3 class="experience-title">Consultoría Estratégica</h3>
+                    <p class="experience-description">
+                        Asesoramiento en arquitectura de software, mejores prácticas, optimización de procesos y transformación digital. Te ayudamos a tomar decisiones técnicas informadas.
+                    </p>
+                </div>
+                <div class="experience-card fade-in">
+                    <div class="experience-icon">⚙️</div>
+                    <h3 class="experience-title">Consultoría Técnica</h3>
+                    <p class="experience-description">
+                        Análisis profundo de sistemas existentes, identificación de mejoras, migraciones tecnológicas y resolución de problemas complejos de infraestructura y código.
+                    </p>
+                </div>
+                <div class="experience-card fade-in">
+                    <div class="experience-icon">☁️</div>
+                    <h3 class="experience-title">Consultoría Cloud</h3>
+                    <p class="experience-description">
+                        Estrategias de migración a la nube, optimización de costos, arquitecturas serverless y diseño de infraestructuras escalables y seguras en AWS, Azure y GCP.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Nuestra Metodología</h2>
+            <div class="value-cards">
+                <div class="value-card fade-in">
+                    <div class="card-icon">🎯</div>
+                    <h3 class="card-title">Análisis Profundo</h3>
+                    <p class="card-description">
+                        Comenzamos cada proyecto con un análisis exhaustivo de tus necesidades, objetivos de negocio y contexto técnico. Entendemos tu realidad antes de proponer soluciones.
+                    </p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="card-icon">🚀</div>
+                    <h3 class="card-title">Desarrollo Ágil</h3>
+                    <p class="card-description">
+                        Utilizamos metodologías ágiles que permiten iteraciones rápidas, feedback continuo y entrega de valor incremental. Tu proyecto evoluciona con tus necesidades.
+                    </p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="card-icon">⭐</div>
+                    <h3 class="card-title">Excelencia Técnica</h3>
+                    <p class="card-description">
+                        Cada línea de código se escribe con los más altos estándares de calidad. Aplicamos mejores prácticas, testing exhaustivo y documentación completa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="section-title section-title-light fade-in">Nuestro Impacto en ALyCs</h2>
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Aplicaciones Desarrolladas</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Proyectos de Consultoría</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Satisfacción del Cliente</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title fade-in">¿Listo para Transformar tu Negocio?</h2>
+            <p class="section-description fade-in">
+                Descubre cómo nuestras soluciones en ALyCs pueden impulsar tu empresa hacia el futuro digital.
+            </p>
+            <div class="hero-buttons fade-in" style="justify-content: center; margin-top: 2rem;">
+                <a href="index.html#contacto" class="btn btn-primary">Trabajemos juntos</a>
+                <a href="index.html#nosotros" class="btn btn-secondary">Conocer más</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="img/GlobeMind-text-white.png" alt="GlobeMind" class="footer-logo-img">
+                    </div>
+                    <p class="footer-description">
+                        Destilería de software especializada en crear soluciones a medida que transforman negocios.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#nosotros">Nosotros</a></li>
+                        <li><a href="index.html#servicios">Servicios</a></li>
+                        <li><a href="index.html#clientes">Clientes</a></li>
+                        <li><a href="index.html#stack">Stack</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="alycs.html">ALyCs</a></li>
+                        <li><a href="index.html#servicios">Desarrollo Mobile</a></li>
+                        <li><a href="index.html#servicios">Integración de IA</a></li>
+                        <li><a href="index.html#servicios">Consultoría Técnica</a></li>
+                        <li><a href="index.html#servicios">Desarrollo Web</a></li>
+                        <li><a href="index.html#servicios">Automatizaciones</a></li>
+                        <li><a href="index.html#servicios">Cloud & DevOps</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Ubicaciones</h4>
+                    <div class="footer-location">
+                        <p><strong>Buenos Aires, Argentina</strong></p>
+                        <p>Oficina Principal</p>
+                    </div>
+                    <div class="footer-location">
+                        <p><strong>Atlanta, USA</strong></p>
+                        <p>Oficina Regional</p>
+                    </div>
+                    <div class="footer-hours">
+                        <p><strong>Contacto:</strong></p>
+                        <p>info@globemind.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2011 GlobeMind. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQXN4FXRMS"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MQXN4FXRMS');
+    </script>
+</body>
+</html>

@@ -17,6 +17,11 @@ window.addEventListener('scroll', () => {
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        // Don't prevent default for dropdown links that go to other pages
+        if (this.classList.contains('dropdown-link') && !this.getAttribute('href').startsWith('#')) {
+            return;
+        }
+        
         e.preventDefault();
         const targetId = this.getAttribute('href');
         
@@ -37,9 +42,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             // Close mobile menu if open
             const navLinks = document.querySelector('.nav-links');
             const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            if (navLinks.classList.contains('active')) {
+            if (navLinks && navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
-                mobileMenuToggle.classList.remove('active');
+                if (mobileMenuToggle) {
+                    mobileMenuToggle.classList.remove('active');
+                }
             }
         }
     });
@@ -55,6 +62,21 @@ if (mobileMenuToggle) {
         mobileMenuToggle.classList.toggle('active');
     });
 }
+
+// Dropdown menu handling for mobile
+const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+        // Only prevent default on mobile
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const dropdown = toggle.nextElementSibling;
+            if (dropdown) {
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            }
+        }
+    });
+});
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
