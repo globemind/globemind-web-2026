@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GlobeMind - Experiencia en ALyCs (Aplicaciones y Consultorías). Soluciones especializadas que transforman negocios.">
-    <meta name="keywords" content="ALyCs, aplicaciones, consultorías, desarrollo de software, GlobeMind">
-    <meta property="og:title" content="GlobeMind - ALyCs">
-    <meta property="og:description" content="Experiencia de GlobeMind en Aplicaciones y Consultorías. Soluciones especializadas que transforman negocios.">
+    <meta name="description" content="GlobeMind - Soluciones tecnológicas especializadas para ALyCs (Agentes de Liquidación y Compensación). Gestión de DDJJ y Registro de Operaciones.">
+    <meta name="keywords" content="ALyCs, Agentes de Liquidación y Compensación, DDJJ, declaraciones juradas, FCI, mercado de capitales, GlobeMind">
+    <meta property="og:title" content="GlobeMind - Soluciones para ALyCs">
+    <meta property="og:description" content="Soluciones tecnológicas especializadas para Agentes de Liquidación y Compensación del mercado de capitales argentino.">
     <meta property="og:type" content="website">
-    <title>GlobeMind - ALyCs | Aplicaciones y Consultorías</title>
+    <title>GlobeMind - Soluciones para ALyCs | Mercado de Capitales</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,124 +18,570 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
-        .page-header {
-            padding: 120px 0 80px;
-            background: linear-gradient(135deg, #396bad 0%, #79a9d6 100%);
+        /* Hero Section - ALyCs */
+        .alycs-hero {
+            min-height: 85vh;
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #396bad 0%, #2a4d7a 50%, #79a9d6 100%);
             color: var(--white);
-            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
         }
 
-        .page-header h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
+        .alycs-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20S-10 18.954-10 30s8.954 20 20 20 20-8.954 20-20zm30 0c0-11.046-8.954-20-20-20S20 18.954 20 30s8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
-        .page-header p {
-            font-size: 1.25rem;
-            opacity: 0.95;
-            max-width: 800px;
-            margin: 0 auto;
+        /* Geometric floating shapes */
+        .geo-shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: floatGeo 20s infinite ease-in-out;
         }
 
-        .content-section {
-            padding: 80px 0;
+        .geo-shape.circle-1 {
+            width: 400px;
+            height: 400px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
         }
 
-        .content-section:nth-child(even) {
-            background: #f8f9fa;
+        .geo-shape.circle-2 {
+            width: 250px;
+            height: 250px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            bottom: 10%;
+            left: 5%;
+            animation-delay: 5s;
         }
 
-        .experience-grid {
+        .geo-shape.line-1 {
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #fff, transparent);
+            top: 30%;
+            left: 10%;
+            transform: rotate(-30deg);
+            animation-delay: 3s;
+        }
+
+        .geo-shape.line-2 {
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #fff, transparent);
+            bottom: 25%;
+            right: 15%;
+            transform: rotate(45deg);
+            animation-delay: 8s;
+        }
+
+        .geo-shape.dot-grid {
+            width: 150px;
+            height: 150px;
+            background-image: radial-gradient(#fff 1.5px, transparent 1.5px);
+            background-size: 20px 20px;
+            top: 20%;
+            right: 20%;
+            opacity: 0.08;
+        }
+
+        @keyframes floatGeo {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, -20px) rotate(5deg); }
+            50% { transform: translate(-10px, 10px) rotate(-5deg); }
+            75% { transform: translate(15px, 15px) rotate(3deg); }
+        }
+
+        .hero-content-alycs {
+            position: relative;
+            z-index: 2;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
         }
 
-        .experience-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .experience-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(57, 107, 173, 0.15);
-            border-color: var(--primary-blue);
-        }
-
-        .experience-icon {
-            font-size: 3rem;
+        .hero-text-alycs h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.15;
             margin-bottom: 1.5rem;
         }
 
-        .experience-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #333;
+        .hero-text-alycs h1 span {
+            display: block;
+            font-size: 2rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 0.5rem;
         }
 
-        .experience-description {
-            color: #666;
+        .hero-text-alycs p {
+            font-size: 1.2rem;
             line-height: 1.8;
+            opacity: 0.95;
+            max-width: 550px;
         }
 
-        .stats-section {
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-            color: var(--white);
-            padding: 80px 0;
+        .hero-visual-alycs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
+        .finance-icon {
+            width: 280px;
+            height: 280px;
+            position: relative;
+        }
+
+        .finance-icon svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+        }
+
+        /* Intro Section */
+        .intro-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .intro-content {
+            max-width: 900px;
+            margin: 0 auto;
             text-align: center;
         }
 
-        .stat-item {
-            color: var(--white);
+        .intro-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(57, 107, 173, 0.1), rgba(121, 169, 214, 0.15));
+            color: var(--primary-blue);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(57, 107, 173, 0.2);
         }
 
-        .stat-number {
+        .intro-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .intro-content p {
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 1.9;
+        }
+
+        /* Solutions Section */
+        .solutions-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .solutions-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .solutions-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .solutions-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .solution-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(57, 107, 173, 0.18);
+            border-color: var(--primary-blue);
+        }
+
+        .solution-card-header {
+            background: linear-gradient(135deg, #396bad 0%, #79a9d6 100%);
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-card-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: shimmer 15s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .solution-icon {
             font-size: 3.5rem;
-            font-weight: 900;
+            margin-bottom: 1rem;
             display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .solution-card-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--white);
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .solution-card-body {
+            padding: 2.5rem;
+        }
+
+        .solution-card-body > p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.6rem 0;
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .feature-list li::before {
+            content: '';
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            background: linear-gradient(135deg, #396bad, #79a9d6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='14' height='14'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 14px;
+        }
+
+        .benefits-badge {
+            background: linear-gradient(135deg, rgba(57, 107, 173, 0.08), rgba(121, 169, 214, 0.12));
+            border: 1px solid rgba(57, 107, 173, 0.15);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .benefits-badge strong {
+            color: var(--primary-blue);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .benefits-badge p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Value Proposition Section */
+        .value-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #396bad 0%, #2a4d7a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50m-40 0a40,40 0 1,0 80,0a40,40 0 1,0 -80,0' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        .value-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .value-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
             margin-bottom: 0.5rem;
         }
 
-        .stat-label {
-            font-size: 1.125rem;
-            font-weight: 500;
-            opacity: 0.9;
+        .value-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
         }
 
-        .cta-section {
-            padding: 80px 0;
+        .value-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .value-item .check {
+            width: 26px;
+            height: 26px;
+            min-width: 26px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .value-item .check svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* CTA Section */
+        .cta-alycs {
+            padding: 100px 0;
             background: var(--white);
             text-align: center;
         }
 
-        @media (max-width: 768px) {
-            .page-header h1 {
-                font-size: 2.5rem;
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content p {
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-large {
+            padding: 1.25rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero-content-alycs {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
 
-            .page-header p {
+            .hero-text-alycs h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-text-alycs p {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            .hero-visual-alycs {
+                display: none;
+            }
+
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .value-items {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .value-item {
+                width: 100%;
+                max-width: 400px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .alycs-hero {
+                min-height: auto;
+                padding: 120px 0 60px;
+            }
+
+            .hero-text-alycs h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-text-alycs h1 span {
+                font-size: 1.3rem;
+            }
+
+            .hero-text-alycs p {
                 font-size: 1rem;
             }
 
-            .experience-grid {
-                grid-template-columns: 1fr;
+            .intro-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .intro-content p {
+                font-size: 1rem;
+            }
+
+            .solutions-header h2 {
+                font-size: 2rem;
+            }
+
+            .solution-card-header {
+                padding: 2rem;
+            }
+
+            .solution-card-body {
+                padding: 2rem;
+            }
+
+            .solution-card-header h3 {
+                font-size: 1.4rem;
+            }
+
+            .value-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
             }
         }
+
+        /* Fade-in animations */
+        .alycs-fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .alycs-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .alycs-fade-in.delay-1 { transition-delay: 0.1s; }
+        .alycs-fade-in.delay-2 { transition-delay: 0.2s; }
+        .alycs-fade-in.delay-3 { transition-delay: 0.3s; }
+        .alycs-fade-in.delay-4 { transition-delay: 0.4s; }
+        .alycs-fade-in.delay-5 { transition-delay: 0.5s; }
     </style>
 </head>
 <body>
@@ -167,143 +613,178 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="fade-in">ALyCs</h1>
-            <p class="fade-in">Aplicaciones y Consultorías - Experiencia que transforma negocios</p>
-        </div>
-    </section>
+    <!-- Hero Section -->
+    <section class="alycs-hero">
+        <!-- Geometric shapes -->
+        <div class="geo-shape circle-1"></div>
+        <div class="geo-shape circle-2"></div>
+        <div class="geo-shape line-1"></div>
+        <div class="geo-shape line-2"></div>
+        <div class="geo-shape dot-grid"></div>
 
-    <!-- Introduction Section -->
-    <section class="content-section">
         <div class="container">
-            <h2 class="section-title fade-in">Nuestra Experiencia en ALyCs</h2>
-            <p class="section-description fade-in">
-                En <strong>GlobeMind</strong>, combinamos el desarrollo de aplicaciones de clase mundial con consultoría estratégica especializada. Nuestra experiencia en <strong>ALyCs (Aplicaciones y Consultorías)</strong> nos permite ofrecer soluciones integrales que no solo resuelven problemas técnicos, sino que también impulsan el crecimiento y la transformación digital de nuestros clientes.
-            </p>
-            <p class="section-description fade-in">
-                Con más de una década de experiencia, hemos desarrollado y consultado en proyectos de diversos sectores, desde startups innovadoras hasta empresas establecidas, siempre con un enfoque en la calidad, la escalabilidad y el valor de negocio.
-            </p>
-        </div>
-    </section>
-
-    <!-- Experience Areas Section -->
-    <section class="content-section">
-        <div class="container">
-            <h2 class="section-title fade-in">Áreas de Especialización</h2>
-            <div class="experience-grid">
-                <div class="experience-card fade-in">
-                    <div class="experience-icon">📱</div>
-                    <h3 class="experience-title">Aplicaciones Móviles</h3>
-                    <p class="experience-description">
-                        Desarrollo de aplicaciones nativas e híbridas para iOS y Android. Creamos experiencias de usuario excepcionales que conectan con tus clientes en cualquier momento y lugar.
-                    </p>
+            <div class="hero-content-alycs">
+                <div class="hero-text-alycs alycs-fade-in">
+                    <h1>
+                        Soluciones Tecnológicas para ALyCs
+                        <span>Agentes de Liquidación y Compensación</span>
+                    </h1>
+                    <p>Optimizamos sus procesos críticos, reducimos riesgos operacionales y mejoramos la experiencia de sus comitentes con tecnología de vanguardia.</p>
                 </div>
-                <div class="experience-card fade-in">
-                    <div class="experience-icon">🌐</div>
-                    <h3 class="experience-title">Aplicaciones Web</h3>
-                    <p class="experience-description">
-                        Plataformas web modernas, escalables y de alto rendimiento. Desde aplicaciones empresariales hasta portales de e-commerce, construimos soluciones que crecen con tu negocio.
-                    </p>
-                </div>
-                <div class="experience-card fade-in">
-                    <div class="experience-icon">🤖</div>
-                    <h3 class="experience-title">Aplicaciones con IA</h3>
-                    <p class="experience-description">
-                        Integración de inteligencia artificial y machine learning para automatizar procesos, generar insights valiosos y crear experiencias personalizadas para tus usuarios.
-                    </p>
-                </div>
-                <div class="experience-card fade-in">
-                    <div class="experience-icon">💼</div>
-                    <h3 class="experience-title">Consultoría Estratégica</h3>
-                    <p class="experience-description">
-                        Asesoramiento en arquitectura de software, mejores prácticas, optimización de procesos y transformación digital. Te ayudamos a tomar decisiones técnicas informadas.
-                    </p>
-                </div>
-                <div class="experience-card fade-in">
-                    <div class="experience-icon">⚙️</div>
-                    <h3 class="experience-title">Consultoría Técnica</h3>
-                    <p class="experience-description">
-                        Análisis profundo de sistemas existentes, identificación de mejoras, migraciones tecnológicas y resolución de problemas complejos de infraestructura y código.
-                    </p>
-                </div>
-                <div class="experience-card fade-in">
-                    <div class="experience-icon">☁️</div>
-                    <h3 class="experience-title">Consultoría Cloud</h3>
-                    <p class="experience-description">
-                        Estrategias de migración a la nube, optimización de costos, arquitecturas serverless y diseño de infraestructuras escalables y seguras en AWS, Azure y GCP.
-                    </p>
+                <div class="hero-visual-alycs alycs-fade-in delay-2">
+                    <div class="finance-icon">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Central circle -->
+                            <circle cx="100" cy="100" r="80" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                            <circle cx="100" cy="100" r="60" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                            <!-- Document icon -->
+                            <rect x="70" y="55" width="60" height="75" rx="5" fill="white" opacity="0.9"/>
+                            <rect x="80" y="70" width="40" height="4" rx="2" fill="#396bad"/>
+                            <rect x="80" y="82" width="30" height="4" rx="2" fill="#79a9d6"/>
+                            <rect x="80" y="94" width="35" height="4" rx="2" fill="#79a9d6"/>
+                            <rect x="80" y="106" width="25" height="4" rx="2" fill="#79a9d6"/>
+                            <!-- Checkmark circle -->
+                            <circle cx="130" cy="120" r="20" fill="#396bad"/>
+                            <path d="M122 120 L128 126 L140 114" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Connection dots -->
+                            <circle cx="45" cy="70" r="8" fill="rgba(255,255,255,0.3)"/>
+                            <circle cx="155" cy="60" r="6" fill="rgba(255,255,255,0.25)"/>
+                            <circle cx="50" cy="140" r="5" fill="rgba(255,255,255,0.2)"/>
+                            <!-- Connection lines -->
+                            <line x1="53" y1="70" x2="70" y2="80" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                            <line x1="149" y1="60" x2="130" y2="70" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Methodology Section -->
-    <section class="content-section">
+    <!-- Intro Section -->
+    <section class="intro-section">
         <div class="container">
-            <h2 class="section-title fade-in">Nuestra Metodología</h2>
-            <div class="value-cards">
-                <div class="value-card fade-in">
-                    <div class="card-icon">🎯</div>
-                    <h3 class="card-title">Análisis Profundo</h3>
-                    <p class="card-description">
-                        Comenzamos cada proyecto con un análisis exhaustivo de tus necesidades, objetivos de negocio y contexto técnico. Entendemos tu realidad antes de proponer soluciones.
-                    </p>
+            <div class="intro-content alycs-fade-in">
+                <span class="intro-badge">Mercado de Capitales Argentino</span>
+                <h2>Experiencia que respalda cada solución</h2>
+                <p>
+                    Con años de experiencia desarrollando soluciones para el mercado de capitales, en <strong>GlobeMind</strong> comprendemos los desafíos operativos y regulatorios que enfrentan las ALyCs. Nuestras soluciones están diseñadas para optimizar procesos críticos, reducir riesgos operacionales y mejorar la experiencia de sus comitentes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions-section">
+        <div class="container">
+            <div class="solutions-header alycs-fade-in">
+                <h2>Nuestras Soluciones</h2>
+                <p>Herramientas especializadas diseñadas para resolver los desafíos específicos de las ALyCs</p>
+            </div>
+
+            <div class="solutions-grid">
+                <!-- Solution 1: DDJJ -->
+                <div class="solution-card alycs-fade-in delay-1">
+                    <div class="solution-card-header">
+                        <span class="solution-icon">📄</span>
+                        <h3>Gestión Digital de Declaraciones Juradas</h3>
+                    </div>
+                    <div class="solution-card-body">
+                        <p>Automatizamos y digitalizamos el proceso completo de envío y firma de DDJJ a comitentes:</p>
+                        <ul class="feature-list">
+                            <li><strong>Generación automática</strong> de declaraciones juradas según requerimientos regulatorios</li>
+                            <li><strong>Envío masivo</strong> a través de múltiples canales (email, SMS, plataforma web)</li>
+                            <li><strong>Firma digital certificada</strong> con validez legal</li>
+                            <li><strong>Tracking en tiempo real</strong> del estado de cada DDJJ</li>
+                            <li><strong>Recordatorios automáticos</strong> para comitentes pendientes</li>
+                            <li><strong>Repositorio centralizado</strong> con acceso inmediato a documentación histórica</li>
+                            <li><strong>Integración</strong> con sus sistemas actuales de back-office</li>
+                        </ul>
+                        <div class="benefits-badge">
+                            <strong>Beneficios</strong>
+                            <p>Reducción drástica de tiempos administrativos, eliminación de papel, trazabilidad completa y cumplimiento regulatorio garantizado.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="value-card fade-in">
-                    <div class="card-icon">🚀</div>
-                    <h3 class="card-title">Desarrollo Ágil</h3>
-                    <p class="card-description">
-                        Utilizamos metodologías ágiles que permiten iteraciones rápidas, feedback continuo y entrega de valor incremental. Tu proyecto evoluciona con tus necesidades.
-                    </p>
-                </div>
-                <div class="value-card fade-in">
-                    <div class="card-icon">⭐</div>
-                    <h3 class="card-title">Excelencia Técnica</h3>
-                    <p class="card-description">
-                        Cada línea de código se escribe con los más altos estándares de calidad. Aplicamos mejores prácticas, testing exhaustivo y documentación completa.
-                    </p>
+
+                <!-- Solution 2: Registro de Operaciones -->
+                <div class="solution-card alycs-fade-in delay-2">
+                    <div class="solution-card-header">
+                        <span class="solution-icon">📊</span>
+                        <h3>Sistema de Registro de Operaciones</h3>
+                    </div>
+                    <div class="solution-card-body">
+                        <p>Solución integral para el registro y seguimiento de operaciones de Fondos Comunes de Inversión y Mercado:</p>
+                        <ul class="feature-list">
+                            <li><strong>Registro automático</strong> de suscripciones y rescates de FCI</li>
+                            <li><strong>Captura de operaciones</strong> de mercado (compra/venta de títulos)</li>
+                            <li><strong>Conciliación automática</strong> con depositaria y mercados</li>
+                            <li><strong>Cálculo de comisiones</strong> y aranceles según configuración</li>
+                            <li><strong>Generación de reportes</strong> regulatorios (CNV, BCRA)</li>
+                            <!-- <li><strong>Dashboard ejecutivo</strong> con métricas operativas en tiempo real</li> -->
+                            <li><strong>Alertas configurables</strong> para operaciones fuera de parámetros</li>
+                            <li><strong>Auditoría completa</strong> de todas las transacciones</li>
+                        </ul>
+                        <div class="benefits-badge">
+                            <strong>Beneficios</strong>
+                            <p>Mayor control operativo, reducción de errores manuales, información consolidada y accesible, cumplimiento normativo simplificado.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Statistics Section -->
-    <section class="stats-section">
+    <!-- Value Proposition Section -->
+    <section class="value-section">
         <div class="container">
-            <h2 class="section-title section-title-light fade-in">Nuestro Impacto en ALyCs</h2>
-            <div class="stats-grid">
-                <div class="stat-item fade-in">
-                    <div class="stat-number">100+</div>
-                    <div class="stat-label">Aplicaciones Desarrolladas</div>
+            <div class="value-header alycs-fade-in">
+                <h2>Nuestra Propuesta de Valor</h2>
+            </div>
+            <div class="value-items">
+                <div class="value-item alycs-fade-in delay-1">
+                    <span class="check">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </span>
+                    <span>Experiencia comprobada en el mercado de capitales argentino</span>
                 </div>
-                <div class="stat-item fade-in">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Proyectos de Consultoría</div>
+                <div class="value-item alycs-fade-in delay-2">
+                    <span class="check">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </span>
+                    <span>Soluciones a medida adaptadas a la operatoria de cada ALyC</span>
                 </div>
-                <div class="stat-item fade-in">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Años de Experiencia</div>
+                <div class="value-item alycs-fade-in delay-3">
+                    <span class="check">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </span>
+                    <span>Tecnología escalable que crece con su negocio</span>
                 </div>
-                <div class="stat-item fade-in">
-                    <div class="stat-number">95%</div>
-                    <div class="stat-label">Satisfacción del Cliente</div>
+                <div class="value-item alycs-fade-in delay-4">
+                    <span class="check">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </span>
+                    <span>Soporte especializado que entiende sus necesidades</span>
+                </div>
+                <div class="value-item alycs-fade-in delay-5">
+                    <span class="check">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </span>
+                    <span>Cumplimiento regulatorio actualizado permanentemente</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="cta-alycs">
         <div class="container">
-            <h2 class="section-title fade-in">¿Listo para Transformar tu Negocio?</h2>
-            <p class="section-description fade-in">
-                Descubre cómo nuestras soluciones en ALyCs pueden impulsar tu empresa hacia el futuro digital.
-            </p>
-            <div class="hero-buttons fade-in" style="justify-content: center; margin-top: 2rem;">
-                <a href="index.html#contacto" class="btn btn-primary">Trabajemos juntos</a>
-                <a href="index.html#nosotros" class="btn btn-secondary">Conocer más</a>
+            <div class="cta-content alycs-fade-in">
+                <h2>¿Listo para optimizar tu operatoria?</h2>
+                <p>Conversemos sobre cómo nuestras soluciones pueden adaptarse a las necesidades específicas de su ALyC.</p>
+                <div class="cta-buttons">
+                    <a href="index.html#contacto" class="btn btn-primary btn-large">Contactar a un especialista</a>
+                    <a href="index.html#nosotros" class="btn btn-secondary btn-large">Conocer más sobre nosotros</a>
+                </div>
             </div>
         </div>
     </section>
@@ -364,6 +845,26 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Fade-in animation script for ALyCs page -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.alycs-fade-in');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQXN4FXRMS"></script>
