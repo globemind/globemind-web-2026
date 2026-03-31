@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GlobeMind - Consultoría de Innovación. Transformamos cómo trabaja tu empresa, no solo sus sistemas. Co-diseñamos soluciones con tu equipo y las validamos antes de escribir una línea de código.">
+    <meta name="keywords" content="consultoría de innovación, design thinking, design sprint, agile, prototipado, transformación digital, GlobeMind">
+    <meta property="og:title" content="GlobeMind - Consultoría de Innovación">
+    <meta property="og:description" content="Transformamos cómo trabaja tu empresa, no solo sus sistemas. Metodologías de innovación probadas con 15 años de experiencia.">
+    <meta property="og:type" content="website">
+    <title>GlobeMind - Consultoría de Innovación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="consultoria-innovacion.css">
+    <link rel="canonical" href="https://globemind.com/consultoria-innovacion.html">
+    <link rel="icon" type="image/png" href="img/globeMind_logo.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="img/GlobeMind-horizontal-grande.png" alt="GlobeMind" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                <li class="nav-dropdown">
+                    <a href="index.html#servicios" class="nav-link dropdown-toggle">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="alycs.html" class="dropdown-link">ALyCs</a></li>
+                        <li><a href="consultoria-innovacion.html" class="dropdown-link">Innovación</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#clientes" class="nav-link">Clientes</a></li>
+                <li><a href="index.html#stack" class="nav-link">Stack</a></li>
+            </ul>
+            <a href="index.html#contacto" class="nav-cta">Trabajemos juntos</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="inno-hero">
+        <div class="geo-shape circle-1"></div>
+        <div class="geo-shape circle-2"></div>
+        <div class="geo-shape triangle"></div>
+        <div class="geo-shape dot-grid"></div>
+        <div class="geo-shape line-1"></div>
+
+        <div class="container">
+            <div class="hero-content-inno">
+                <div class="hero-text-inno inno-fade-in">
+                    <h1>
+                        Transformamos cómo trabaja
+                        <span>tu empresa, no solo sus sistemas.</span>
+                    </h1>
+                    <p>Combinamos metodologías de innovación probadas con 15 años de experiencia construyendo software para sectores exigentes. No te decimos qué hacer, codiseñamos la solución con tu equipo y la validamos antes de escribir una línea de código.</p>
+                    <div class="hero-stats">
+                        <!-- <div class="hero-stat">
+                            <span class="hero-stat-value">+15</span>
+                            <span class="hero-stat-label">Años en sector financiero</span>
+                        </div> -->
+                        <div class="hero-stat">
+                            <span class="hero-stat-value">40→2h</span>
+                            <span class="hero-stat-label">Procesos transformados</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-value">100%</span>
+                            <span class="hero-stat-label">Foco en resultados medibles</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual-inno inno-fade-in delay-2">
+                    <div class="inno-icon">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Outer ring -->
+                            <circle cx="100" cy="100" r="85" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+                            <!-- Process circles -->
+                            <circle cx="100" cy="38" r="18" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+                            <text x="100" y="43" text-anchor="middle" fill="white" font-size="11" font-weight="bold" font-family="sans-serif">01</text>
+                            <circle cx="162" cy="100" r="18" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+                            <text x="162" y="105" text-anchor="middle" fill="white" font-size="11" font-weight="bold" font-family="sans-serif">02</text>
+                            <circle cx="100" cy="162" r="18" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+                            <text x="100" y="167" text-anchor="middle" fill="white" font-size="11" font-weight="bold" font-family="sans-serif">03</text>
+                            <circle cx="38" cy="100" r="18" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+                            <text x="38" y="105" text-anchor="middle" fill="white" font-size="11" font-weight="bold" font-family="sans-serif">04</text>
+                            <!-- Connecting arcs -->
+                            <path d="M115 47 A65 65 0 0 1 153 87" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="5 3"/>
+                            <path d="M153 113 A65 65 0 0 1 115 153" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="5 3"/>
+                            <path d="M85 153 A65 65 0 0 1 47 113" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="5 3"/>
+                            <path d="M47 87 A65 65 0 0 1 85 47" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="5 3"/>
+                            <!-- Center icon -->
+                            <circle cx="100" cy="100" r="26" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+                            <path d="M92 107 L98 113 L110 95" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content inno-fade-in">
+                <span class="intro-badge">Metodologías de Innovación Probadas</span>
+                <h2>Un proceso riguroso para innovar sin improvisar</h2>
+                <p>
+                    La mayoría de las empresas saben que algo puede mejorar. El desafío es saber exactamente qué cambiar y cómo hacerlo sin interrumpir la operación. En <strong>GlobeMind</strong> trabajamos con las metodologías de innovación más efectivas del mundo, adaptadas a la realidad de empresas latinoamericanas con operaciones complejas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="problems-section">
+        <div class="container">
+            <div class="section-header inno-fade-in">
+                <h2>¿Te reconocés en alguno de estos escenarios?</h2>
+                <p>El desafío es saber exactamente qué cambiar y cómo hacerlo sin interrumpir la operación.</p>
+            </div>
+            <div class="problems-grid">
+                <div class="problem-card inno-fade-in delay-1">
+                    <h3>Procesos manuales que escalan mal</h3>
+                    <p>Tareas repetitivas que consumen horas de tu equipo y generan errores evitables.</p>
+                </div>
+                <div class="problem-card inno-fade-in delay-2">
+                    <h3>Ideas sin validación real</h3>
+                    <p>Proyectos que arrancan con entusiasmo y terminan sin adopción interna ni resultado medible.</p>
+                </div>
+                <div class="problem-card inno-fade-in delay-3">
+                    <h3>Tecnología subutilizada</h3>
+                    <p>Sistemas implementados que no resuelven el problema de fondo porque nadie mapeó el proceso primero.</p>
+                </div>
+                <div class="problem-card inno-fade-in delay-4">
+                    <h3>Tiempo de desarrollo desperdiciado</h3>
+                    <p>Desarrollos que arrancan sin un prototipo validado, generando re-trabajo costoso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="methodology-section">
+        <div class="container">
+            <div class="section-header inno-fade-in">
+                <h2>Nuestro Enfoque Metodológico</h2>
+                <p>Trabajamos con las metodologías de innovación más efectivas, adaptadas a la realidad latinoamericana.</p>
+            </div>
+            <div class="methodology-list">
+                <div class="method-item inno-fade-in delay-1">
+                    <div class="method-number">01</div>
+                    <div class="method-content">
+                        <span class="method-label">Base</span>
+                        <h3>Design Thinking</h3>
+                        <p>Ponemos al usuario en el centro. Mapeamos el problema real antes de pensar en soluciones. Empatía, definición y síntesis como punto de partida.</p>
+                    </div>
+                </div>
+                <div class="method-item inno-fade-in delay-2">
+                    <div class="method-number">02</div>
+                    <div class="method-content">
+                        <span class="method-label">Creatividad estructurada</span>
+                        <h3>Ideation Methodologies</h3>
+                        <p>Técnicas para generar y priorizar ideas con tu equipo. Estructura que libera la creatividad.</p>
+                    </div>
+                </div>
+                <div class="method-item inno-fade-in delay-3">
+                    <div class="method-number">03</div>
+                    <div class="method-content">
+                        <span class="method-label">Velocidad + Validación</span>
+                        <h3>Design Sprints & Rapid Prototyping</h3>
+                        <p>Podemos prototipar y testar una solución con usuarios reales. Reducimos el riesgo antes de comprometer presupuesto de desarrollo.</p>
+                    </div>
+                </div>
+                <div class="method-item inno-fade-in delay-4">
+                    <div class="method-number">04</div>
+                    <div class="method-content">
+                        <span class="method-label">Ejecución sostenida</span>
+                        <h3>Agile Product Management</h3>
+                        <p>Si la solución requiere desarrollo, lo gestionamos con marcos ágiles: OKRs, roadmaps, backlogs priorizados y ciclos cortos de entrega con valor medible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process / Phases Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header inno-fade-in">
+                <h2>Cómo Trabajamos</h2>
+                <p>Un engagement diseñado para entregar resultados, no reportes. Cada etapa tiene un entregable concreto. Podés entrar en cualquier fase o contratar el proceso completo.</p>
+            </div>
+            <div class="phases-list">
+                <div class="phase-card inno-fade-in delay-1">
+                    <div class="phase-meta">
+                        <span class="phase-number">FASE 1</span>
+                        <h3>Diagnóstico & Mapeo</h3>
+                        <span class="phase-duration">1–2 semanas</span>
+                    </div>
+                    <div class="phase-body">
+                        <p>Entrevistas con stakeholders, observación del proceso actual y construcción del mapa de situación. Identificamos dónde está el dolor real y qué tiene mayor impacto potencial.</p>
+                        <div class="phase-deliverables">
+                            <span class="deliverable-tag">Mapa de proceso (as-is)</span>
+                            <span class="deliverable-tag">Árbol de problemas</span>
+                            <span class="deliverable-tag">Oportunidades priorizadas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase-card inno-fade-in delay-2">
+                    <div class="phase-meta">
+                        <span class="phase-number">FASE 2</span>
+                        <h3>Ideación & Diseño de Solución</h3>
+                        <span class="phase-duration">1–2 semanas</span>
+                    </div>
+                    <div class="phase-body">
+                        <p>Workshops de ideación con tu equipo. Generamos múltiples conceptos de solución y los convergemos en una propuesta validada internamente antes de prototipar.</p>
+                        <div class="phase-deliverables">
+                            <span class="deliverable-tag">Workshop facilitado</span>
+                            <span class="deliverable-tag">Concepto de solución</span>
+                            <span class="deliverable-tag">Criterios de éxito definidos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase-card inno-fade-in delay-3">
+                    <div class="phase-meta">
+                        <span class="phase-number">FASE 3</span>
+                        <h3>Prototipado & Validación</h3>
+                        <span class="phase-duration">1 semana (Sprint)</span>
+                    </div>
+                    <div class="phase-body">
+                        <p>Design Sprint de 5 días: prototipo funcional de alta fidelidad y testeo con usuarios reales. Aprendemos rápido y ajustamos antes del desarrollo.</p>
+                        <div class="phase-deliverables">
+                            <span class="deliverable-tag">Prototipo clickeable</span>
+                            <span class="deliverable-tag">Reporte de usuarios</span>
+                            <span class="deliverable-tag">Go/No-go fundamentado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase-card inno-fade-in delay-4">
+                    <div class="phase-meta">
+                        <span class="phase-number">FASE 4</span>
+                        <h3>Roadmap & Ejecución Ágil</h3>
+                        <span class="phase-duration">Continuo</span>
+                    </div>
+                    <div class="phase-body">
+                        <p>Si el proyecto requiere desarrollo, construimos el roadmap técnico con OKRs claros y lo ejecutamos con nuestro equipo o junto al tuyo. Entregas incrementales desde el sprint 1.</p>
+                        <div class="phase-deliverables">
+                            <span class="deliverable-tag">Product Roadmap</span>
+                            <span class="deliverable-tag">Backlog priorizado</span>
+                            <span class="deliverable-tag">MVP en producción</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deliverables Section -->
+    <section class="deliverables-section">
+        <div class="container">
+            <div class="section-header inno-fade-in">
+                <h2>Lo que te llevás</h2>
+                <p>Entregables concretos, no presentaciones vacías. Cada etapa produce activos que tu organización puede usar independientemente del paso siguiente.</p>
+            </div>
+            <div class="deliverables-grid">
+                <div class="deliverable-card inno-fade-in delay-1">
+                    <div class="deliverable-icon-wrap">
+                        <i class="bi bi-diagram-3"></i>
+                    </div>
+                    <h3>Mapa de proceso rediseñado</h3>
+                    <p>Documentación del flujo actual y propuesto, con puntos de fricción identificados y métricas de mejora esperada.</p>
+                </div>
+                <div class="deliverable-card inno-fade-in delay-2">
+                    <div class="deliverable-icon-wrap">
+                        <i class="bi bi-phone"></i>
+                    </div>
+                    <h3>Prototipo validado con usuarios</h3>
+                    <p>Prototipo de alta fidelidad testeado con usuarios reales. Decisiones respaldadas por evidencia, no suposiciones.</p>
+                </div>
+                <div class="deliverable-card inno-fade-in delay-3">
+                    <div class="deliverable-icon-wrap">
+                        <i class="bi bi-kanban"></i>
+                    </div>
+                    <h3>Product Roadmap técnico</h3>
+                    <p>Plan de ejecución priorizado por impacto y esfuerzo. OKRs, épicas, sprints y criterios de éxito por entrega.</p>
+                </div>
+                <div class="deliverable-card inno-fade-in delay-4">
+                    <div class="deliverable-icon-wrap">
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+                    <h3>Dashboard de métricas</h3>
+                    <p>KPIs de proceso antes y después. Medición del impacto real: tiempo, errores, costos y satisfacción de usuarios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why GlobeMind Section -->
+    <section class="why-section">
+        <div class="container">
+            <div class="why-inner">
+                <div class="why-text inno-fade-in">
+                    <h2>¿Por qué GlobeMind<br>y no una consultora tradicional?</h2>
+                    <p>La mayoría de las consultoras te entregan un diagnóstico. Nosotros construimos la solución. Llevamos 15 años en el sector financiero argentino, conocemos la regulación, los procesos y los dolores reales de las ALyCs y sus ecosistemas.</p>
+                    <br>
+                    <p>Somos desarrolladores que aplican metodologías de innovación, no consultores que subcontratan el desarrollo. El prototipo validado puede convertirse en producción sin traducción ni pérdida de contexto.</p>
+                </div>
+                <div class="why-items inno-fade-in delay-2">
+                    <div class="value-item">
+                        <span class="check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                        <span>Entendemos el negocio antes de proponer tecnología</span>
+                    </div>
+                    <div class="value-item">
+                        <span class="check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                        <span>Del prototipo al código en el mismo equipo</span>
+                    </div>
+                    <div class="value-item">
+                        <span class="check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                        <span>Experiencia real en sector financiero y compliance regulatorio</span>
+                    </div>
+                    <div class="value-item">
+                        <span class="check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                        <span>Foco en resultados medibles, no en horas facturadas</span>
+                    </div>
+                    <div class="value-item">
+                        <span class="check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                        <span>Podés contratar una fase sin comprometer todo el proceso</span>
+                    </div>
+                    <div class="value-item">
+                        <span class="check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                        <span>Equipo senior con visión de producto, no solo de proyecto</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-inno">
+        <div class="container">
+            <div class="cta-content inno-fade-in">
+                <h2>¿Tenés un proceso que necesita transformarse?</h2>
+                <p>Empezamos con una sesión de diagnóstico sin costo. En 60 minutos identificamos si hay una oportunidad real y cómo abordarla.</p>
+                <div class="cta-buttons">
+                    <a href="https://forms.gle/HwxZTKRF1AynkFtF8" class="btn btn-primary btn-large" target="_blank">Agendar sesión de diagnóstico</a>
+                    <a href="index.html#nosotros" class="btn btn-secondary btn-large">Conocer más sobre nosotros</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="img/GlobeMind-text-white.png" alt="GlobeMind" class="footer-logo-img">
+                    </div>
+                    <p class="footer-description">
+                        Destilería de software especializada en crear soluciones a medida que transforman negocios.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#nosotros">Nosotros</a></li>
+                        <li><a href="index.html#servicios">Servicios</a></li>
+                        <li><a href="index.html#clientes">Clientes</a></li>
+                        <li><a href="index.html#stack">Stack</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="alycs.html">ALyCs</a></li>
+                        <li><a href="consultoria-innovacion.html">Consultoría de Innovación</a></li>
+                        <li><a href="index.html#servicios">Desarrollo Mobile</a></li>
+                        <li><a href="index.html#servicios">Integración de IA</a></li>
+                        <li><a href="index.html#servicios">Desarrollo Web</a></li>
+                        <li><a href="index.html#servicios">Automatizaciones</a></li>
+                        <li><a href="index.html#servicios">Cloud & DevOps</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Ubicaciones</h4>
+                    <div class="footer-location">
+                        <p><strong>Buenos Aires, Argentina</strong></p>
+                        <p>Oficina Principal</p>
+                    </div>
+                    <div class="footer-location">
+                        <p><strong>Atlanta, USA</strong></p>
+                        <p>Oficina Regional</p>
+                    </div>
+                    <div class="footer-hours">
+                        <p><strong>Contacto:</strong></p>
+                        <p>info@globemind.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2011 GlobeMind. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.inno-fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQXN4FXRMS"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MQXN4FXRMS');
+    </script>
+</body>
+</html>
