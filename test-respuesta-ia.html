@@ -379,6 +379,15 @@
 
             function renderResultados(respuestas) {
                 resultsEl.innerHTML = '';
+
+                if (!respuestas.length) {
+                    var emptyMsg = document.createElement('p');
+                    emptyMsg.className = 'tria-demo-empty';
+                    emptyMsg.textContent = 'No encontramos respuestas para mostrar. Probá con otro rubro o reformulá tus consultas.';
+                    resultsEl.appendChild(emptyMsg);
+                    return;
+                }
+
                 respuestas.forEach(function(item) {
                     var inLine = document.createElement('div');
                     inLine.className = 'tria-chat-line in';
@@ -437,7 +446,10 @@
                         return response.json();
                     })
                     .then(function(data) {
-                        var respuestas = (data && data.respuestas) || [];
+                        // n8n devuelve un array de items (uno solo, en general);
+                        // cada item trae el objeto { respuestas: [...] } real.
+                        var payloadData = Array.isArray(data) ? (data[0] || {}) : (data || {});
+                        var respuestas = payloadData.respuestas || [];
                         window.triaResultados = respuestas;
                         renderResultados(respuestas);
                     })
