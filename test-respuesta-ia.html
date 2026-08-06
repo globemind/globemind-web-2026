@@ -76,8 +76,39 @@
                             <span>Panel de respuesta · en vivo</span>
                             <div class="tria-dot-row"><div class="tria-dot"></div><div class="tria-dot"></div><div class="tria-dot"></div></div>
                         </div>
-                        <div class="tria-chat-line in"><div class="tria-bubble in">Hola! ¿Tienen stock del modelo azul en talle M? 👋</div></div>
-                        <div class="tria-chat-line out"><div class="tria-bubble out">¡Hola! Sí, tenemos 4 unidades en talle M. ¿Querés que te lo reserve o preferís coordinar el envío?</div></div>
+
+                        <form class="tria-demo-form" id="triaDemoForm">
+                            <div class="tria-demo-tabs" role="tablist">
+                                <button type="button" class="tria-tab active" data-mode="rubro" id="triaTabRubro" role="tab" aria-selected="true">Elegí tu rubro</button>
+                                <button type="button" class="tria-tab" data-mode="custom" id="triaTabCustom" role="tab" aria-selected="false">Tus consultas</button>
+                            </div>
+
+                            <div class="tria-demo-field" data-field="rubro">
+                                <select class="tria-select" id="triaRubroSelect" name="rubro" aria-label="Rubro">
+                                    <option value="gastronomia">Gastronomía</option>
+                                    <option value="indumentaria">Indumentaria</option>
+                                    <option value="servicios">Servicios</option>
+                                    <option value="general" selected>General</option>
+                                </select>
+                            </div>
+
+                            <div class="tria-demo-field" data-field="custom" hidden>
+                                <textarea class="tria-textarea" id="triaConsultasInput" name="consultas" rows="4" maxlength="600" placeholder="Una consulta por línea (hasta 5)" aria-label="Tus consultas"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary tria-demo-submit" id="triaSubmitBtn">
+                                <span class="tria-submit-label">Probar ahora →</span>
+                                <span class="tria-spinner" hidden aria-hidden="true"></span>
+                            </button>
+
+                            <p class="tria-demo-error" id="triaDemoError" hidden></p>
+                        </form>
+
+                        <div class="tria-demo-results" id="triaDemoResults">
+                            <div class="tria-chat-line in"><div class="tria-bubble in">Hola! ¿Tienen stock del modelo azul en talle M? 👋</div></div>
+                            <div class="tria-chat-line out"><div class="tria-bubble out">¡Hola! Sí, tenemos 4 unidades en talle M. ¿Querés que te lo reserve o preferís coordinar el envío?</div></div>
+                        </div>
+
                         <div class="tria-gauge-row">
                             <div class="tria-gauge before">
                                 <div class="label">Respuesta manual</div>
@@ -289,6 +320,135 @@
 
             fadeElements.forEach(el => observer.observe(el));
         });
+    </script>
+
+    <!-- Interactive demo: rubro/consultas -> IA webhook -->
+    <script>
+        (function() {
+            var TRIA_WEBHOOK_URL = 'https://globemind.app.n8n.cloud/webhook-test/preview';
+            var MAX_CONSULTAS = 5;
+
+            var form = document.getElementById('triaDemoForm');
+            if (!form) return;
+
+            var tabs = form.querySelectorAll('.tria-tab');
+            var fields = form.querySelectorAll('.tria-demo-field');
+            var rubroSelect = document.getElementById('triaRubroSelect');
+            var consultasInput = document.getElementById('triaConsultasInput');
+            var submitBtn = document.getElementById('triaSubmitBtn');
+            var submitLabel = submitBtn.querySelector('.tria-submit-label');
+            var spinner = submitBtn.querySelector('.tria-spinner');
+            var errorEl = document.getElementById('triaDemoError');
+            var resultsEl = document.getElementById('triaDemoResults');
+
+            var mode = 'rubro';
+
+            // Accesible desde el resto del script / pasos siguientes del flujo.
+            window.triaResultados = [];
+
+            tabs.forEach(function(tab) {
+                tab.addEventListener('click', function() {
+                    mode = tab.dataset.mode;
+                    tabs.forEach(function(t) {
+                        var isActive = t === tab;
+                        t.classList.toggle('active', isActive);
+                        t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                    });
+                    fields.forEach(function(f) {
+                        f.hidden = f.dataset.field !== mode;
+                    });
+                    hideError();
+                });
+            });
+
+            function hideError() {
+                errorEl.hidden = true;
+                errorEl.textContent = '';
+            }
+
+            function showError(message) {
+                errorEl.textContent = message;
+                errorEl.hidden = false;
+            }
+
+            function setLoading(isLoading) {
+                submitBtn.disabled = isLoading;
+                spinner.hidden = !isLoading;
+                submitLabel.textContent = isLoading ? 'Generando respuestas...' : 'Probar ahora →';
+            }
+
+            function renderResultados(respuestas) {
+                resultsEl.innerHTML = '';
+                respuestas.forEach(function(item) {
+                    var inLine = document.createElement('div');
+                    inLine.className = 'tria-chat-line in';
+                    var inBubble = document.createElement('div');
+                    inBubble.className = 'tria-bubble in';
+                    inBubble.textContent = item.consulta;
+                    inLine.appendChild(inBubble);
+
+                    var outLine = document.createElement('div');
+                    outLine.className = 'tria-chat-line out';
+                    var outBubble = document.createElement('div');
+                    outBubble.className = 'tria-bubble out';
+                    outBubble.textContent = item.respuesta;
+                    outLine.appendChild(outBubble);
+
+                    resultsEl.appendChild(inLine);
+                    resultsEl.appendChild(outLine);
+                });
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                hideError();
+
+                var rubro = '';
+                var consultas = [];
+
+                if (mode === 'rubro') {
+                    rubro = rubroSelect.value;
+                } else {
+                    consultas = consultasInput.value
+                        .split('\n')
+                        .map(function(line) { return line.trim(); })
+                        .filter(function(line) { return line.length > 0; })
+                        .slice(0, MAX_CONSULTAS);
+
+                    if (consultas.length === 0) {
+                        showError('Escribí al menos una consulta para probar.');
+                        return;
+                    }
+                }
+
+                var payload = { rubro: rubro, consultas: consultas };
+
+                setLoading(true);
+
+                fetch(TRIA_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                })
+                    .then(function(response) {
+                        if (!response.ok) {
+                            throw new Error('bad-status');
+                        }
+                        return response.json();
+                    })
+                    .then(function(data) {
+                        var respuestas = (data && data.respuestas) || [];
+                        window.triaResultados = respuestas;
+                        renderResultados(respuestas);
+                    })
+                    .catch(function() {
+                        showError('No pudimos generar las respuestas. Probá de nuevo en unos segundos.');
+                    })
+                    .finally(function() {
+                        setLoading(false);
+                    });
+            });
+        })();
     </script>
 
     <!-- Google tag (gtag.js) -->

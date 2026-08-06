@@ -199,6 +199,111 @@
     background: rgba(255, 255, 255, 0.3);
 }
 
+/* Interactive demo form */
+.tria-demo-form {
+    margin-bottom: 1.1rem;
+}
+
+.tria-demo-tabs {
+    display: flex;
+    gap: 0.35rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 0.9rem;
+}
+
+.tria-tab {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.5rem 0.6rem;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.tria-tab.active {
+    background: var(--secondary-blue);
+    color: #0d1b28;
+}
+
+.tria-demo-field {
+    margin-bottom: 0.9rem;
+}
+
+.tria-select,
+.tria-textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #e4e9ee;
+    border-radius: 8px;
+    padding: 0.65rem 0.8rem;
+    font-family: 'Inter', 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.tria-select:focus,
+.tria-textarea:focus {
+    border-color: var(--secondary-blue);
+}
+
+.tria-textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.tria-demo-submit {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.tria-demo-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.tria-spinner {
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    border-top-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: triaSpin 0.7s linear infinite;
+}
+
+@keyframes triaSpin {
+    to { transform: rotate(360deg); }
+}
+
+.tria-demo-error {
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: #e2a988;
+    background: rgba(226, 169, 136, 0.12);
+    border: 1px solid rgba(226, 169, 136, 0.35);
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+}
+
+.tria-demo-results {
+    margin-bottom: 0.25rem;
+}
+
 .tria-chat-line {
     display: flex;
     margin-bottom: 0.75rem;
