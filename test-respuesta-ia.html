@@ -209,8 +209,34 @@
                 </div>
             </div>
             <div class="tria-result-cta tria-fade-in">
-                <a href="https://forms.gle/HwxZTKRF1AynkFtF8" target="_blank" class="btn btn-primary btn-large">Quiero el diagnóstico completo →</a>
-                <p class="tria-form-hint">📩 Te pedimos nombre, mail y WhatsApp para enviarte el reporte completo.</p>
+                <div id="triaDiagnosticoLocked" class="tria-diagnostico-locked">
+                    <p class="tria-form-hint">📩 Primero probá la herramienta arriba para desbloquear tu diagnóstico completo por mail.</p>
+                    <a href="#probar" class="btn btn-secondary btn-large">Probar la demo ↑</a>
+                </div>
+
+                <form id="triaLeadForm" class="tria-lead-form" hidden>
+                    <div class="form-group">
+                        <label for="triaLeadNombre">Nombre</label>
+                        <input type="text" id="triaLeadNombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="triaLeadEmail">Email</label>
+                        <input type="email" id="triaLeadEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="triaLeadWhatsapp">WhatsApp</label>
+                        <input type="tel" id="triaLeadWhatsapp" name="whatsapp" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large tria-lead-submit" id="triaLeadSubmitBtn">
+                        <span class="tria-submit-label">Quiero el diagnóstico completo →</span>
+                        <span class="tria-spinner" hidden aria-hidden="true"></span>
+                    </button>
+
+                    <p class="tria-demo-error" id="triaLeadError" hidden></p>
+                </form>
+
+                <div id="triaLeadSuccess" class="tria-lead-success" hidden></div>
             </div>
         </div>
     </section>
@@ -450,11 +476,127 @@
                         // cada item trae el objeto { respuestas: [...] } real.
                         var payloadData = Array.isArray(data) ? (data[0] || {}) : (data || {});
                         var respuestas = payloadData.respuestas || [];
+
+                        // Accesibles desde el resto del script / pasos siguientes del flujo.
                         window.triaResultados = respuestas;
+                        window.triaRubro = rubro;
+                        window.triaConsultas = consultas;
+
                         renderResultados(respuestas);
+
+                        if (respuestas.length) {
+                            document.dispatchEvent(new CustomEvent('tria:demo-success', {
+                                detail: { rubro: rubro, consultas: consultas, respuestas: respuestas }
+                            }));
+                        }
                     })
                     .catch(function() {
                         showError('No pudimos generar las respuestas. Probá de nuevo en unos segundos.');
+                    })
+                    .finally(function() {
+                        setLoading(false);
+                    });
+            });
+        })();
+    </script>
+
+    <!-- Formulario de diagnóstico completo por mail (Flujo 2) -->
+    <script>
+        (function() {
+            var LEAD_WEBHOOK_URL = 'https://globemind.app.n8n.cloud/webhook/reporte';
+            var EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            var lockedEl = document.getElementById('triaDiagnosticoLocked');
+            var form = document.getElementById('triaLeadForm');
+            var successEl = document.getElementById('triaLeadSuccess');
+            if (!form) return;
+
+            var nombreInput = document.getElementById('triaLeadNombre');
+            var emailInput = document.getElementById('triaLeadEmail');
+            var whatsappInput = document.getElementById('triaLeadWhatsapp');
+            var submitBtn = document.getElementById('triaLeadSubmitBtn');
+            var submitLabel = submitBtn.querySelector('.tria-submit-label');
+            var spinner = submitBtn.querySelector('.tria-spinner');
+            var errorEl = document.getElementById('triaLeadError');
+
+            function hideError() {
+                errorEl.hidden = true;
+                errorEl.textContent = '';
+            }
+
+            function showError(message) {
+                errorEl.textContent = message;
+                errorEl.hidden = false;
+            }
+
+            function setLoading(isLoading) {
+                submitBtn.disabled = isLoading;
+                spinner.hidden = !isLoading;
+                submitLabel.textContent = isLoading ? 'Enviando...' : 'Quiero el diagnóstico completo →';
+            }
+
+            // Se desbloquea recién cuando el usuario ya vio respuestas reales de la demo (Flujo 1).
+            document.addEventListener('tria:demo-success', function() {
+                if (lockedEl) lockedEl.hidden = true;
+                form.hidden = false;
+            });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                hideError();
+
+                var nombre = nombreInput.value.trim();
+                var email = emailInput.value.trim();
+                var whatsapp = whatsappInput.value.trim();
+
+                if (!nombre || !email || !whatsapp) {
+                    showError('Completá todos los campos para pedir tu diagnóstico.');
+                    return;
+                }
+
+                if (!EMAIL_REGEX.test(email)) {
+                    showError('Ingresá un email válido.');
+                    return;
+                }
+
+                var payload = {
+                    nombre: nombre,
+                    email: email,
+                    whatsapp: whatsapp,
+                    rubro: window.triaRubro || '',
+                    consultas: window.triaConsultas || [],
+                    respuestas: window.triaResultados || []
+                };
+
+                // Deshabilitado apenas se hace submit: evita el doble envío por doble click.
+                setLoading(true);
+
+                fetch(LEAD_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                })
+                    .then(function(response) {
+                        if (!response.ok) {
+                            throw new Error('bad-status');
+                        }
+                        return response.json();
+                    })
+                    .then(function(data) {
+                        // Mismo patrón de n8n que en el Flujo 1: puede llegar envuelto en un array.
+                        var payloadData = Array.isArray(data) ? (data[0] || {}) : (data || {});
+
+                        if (!payloadData.ok) {
+                            showError('No pudimos enviar tu diagnóstico. Probá de nuevo en unos segundos.');
+                            return;
+                        }
+
+                        successEl.textContent = payloadData.mensaje || '¡Listo! Te vamos a escribir con tu diagnóstico completo.';
+                        successEl.hidden = false;
+                        form.hidden = true;
+                    })
+                    .catch(function() {
+                        showError('No pudimos enviar tu diagnóstico. Probá de nuevo en unos segundos.');
                     })
                     .finally(function() {
                         setLoading(false);
