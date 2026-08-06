@@ -1,0 +1,615 @@
+/* Hero Section - Test de Respuesta IA */
+.tria-hero {
+    min-height: 80vh;
+    padding: 140px 0 80px;
+    background: linear-gradient(135deg, #396bad 0%, #2a4d7a 50%, #79a9d6 100%);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.tria-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20S-10 18.954-10 30s8.954 20 20 20 20-8.954 20-20zm30 0c0-11.046-8.954-20-20-20S20 18.954 20 30s8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Geometric floating shapes */
+.geo-shape {
+    position: absolute;
+    opacity: 0.1;
+    animation: floatGeo 20s infinite ease-in-out;
+}
+
+.geo-shape.circle-1 {
+    width: 380px;
+    height: 380px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.geo-shape.circle-2 {
+    width: 220px;
+    height: 220px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    bottom: 5%;
+    left: 5%;
+    animation-delay: 5s;
+}
+
+.geo-shape.line-1 {
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+    top: 25%;
+    left: 8%;
+    transform: rotate(-30deg);
+    animation-delay: 3s;
+}
+
+.geo-shape.dot-grid {
+    width: 150px;
+    height: 150px;
+    background-image: radial-gradient(#fff 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+    top: 15%;
+    right: 22%;
+    opacity: 0.08;
+}
+
+@keyframes floatGeo {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(20px, -20px) rotate(5deg); }
+    50% { transform: translate(-10px, 10px) rotate(-5deg); }
+    75% { transform: translate(15px, 15px) rotate(3deg); }
+}
+
+.hero-content-tria {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.tria-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    margin-bottom: 1.5rem;
+}
+
+.tria-eyebrow::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.hero-text-tria h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+
+.hero-text-tria h1 span {
+    display: block;
+    color: #f1f6fc;
+    opacity: 0.85;
+}
+
+.hero-text-tria p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    opacity: 0.95;
+    max-width: 520px;
+}
+
+.tria-cta-row {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn-ghost-tria {
+    color: var(--white);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    padding-bottom: 3px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.btn-ghost-tria:hover {
+    opacity: 1;
+}
+
+.tria-microcopy {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 1.25rem;
+}
+
+/* Instrument panel visual */
+.hero-visual-tria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tria-panel {
+    width: 100%;
+    max-width: 380px;
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 1.75rem;
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.45);
+}
+
+.tria-panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 1rem;
+}
+
+.tria-dot-row {
+    display: flex;
+    gap: 6px;
+}
+
+.tria-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.tria-chat-line {
+    display: flex;
+    margin-bottom: 0.75rem;
+}
+
+.tria-chat-line.out {
+    justify-content: flex-end;
+}
+
+.tria-bubble {
+    max-width: 85%;
+    padding: 0.7rem 0.9rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    line-height: 1.45;
+}
+
+.tria-bubble.in {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e4e9ee;
+    border-bottom-left-radius: 2px;
+}
+
+.tria-bubble.out {
+    background: var(--secondary-blue);
+    color: #0d1b28;
+    border-bottom-right-radius: 2px;
+    font-weight: 500;
+}
+
+.tria-gauge-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 1.25rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.tria-gauge .label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.tria-gauge .value {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-top: 0.25rem;
+}
+
+.tria-gauge.before .value { color: #e2a988; }
+.tria-gauge.after .value { color: var(--secondary-blue); }
+.tria-gauge-arrow { color: rgba(255, 255, 255, 0.35); font-size: 1.1rem; padding-bottom: 0.3rem; }
+
+.intro-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(57, 107, 173, 0.1), rgba(121, 169, 214, 0.15));
+    color: var(--primary-blue);
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid rgba(57, 107, 173, 0.2);
+}
+
+/* ---------- PAIN ---------- */
+.tria-pain {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.tria-pain-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.tria-pain-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.25;
+}
+
+.tria-pain-text p {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.8;
+    margin-top: 1.1rem;
+    max-width: 480px;
+}
+
+.tria-donut-wrap {
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tria-donut-tag {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary-blue);
+    margin-bottom: 0.75rem;
+}
+
+.tria-clock {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    display: block;
+}
+
+.tria-clock-caption {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 0.75rem;
+}
+
+/* ---------- PROCESS ---------- */
+.tria-process {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.tria-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.tria-step {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 2.25rem 1.75rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tria-step:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(57, 107, 173, 0.15);
+    border-color: var(--primary-blue);
+}
+
+.tria-step-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #396bad 0%, #79a9d6 100%);
+    box-shadow: 0 12px 30px rgba(57, 107, 173, 0.22);
+    margin-bottom: 1.25rem;
+}
+
+.tria-step-icon .bi {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.tria-step-tag {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary-blue);
+    margin-bottom: 0.6rem;
+}
+
+.tria-step h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.tria-step p {
+    font-size: 0.95rem;
+    color: #5b6774;
+    line-height: 1.6;
+    margin-top: 0.6rem;
+}
+
+/* ---------- RESULT / DIAGNOSTIC ---------- */
+.tria-result {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.tria-stats-panel {
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    color: var(--white);
+}
+
+.tria-stat {
+    padding: 0 1.75rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.tria-stat:first-child { padding-left: 0; }
+.tria-stat:last-child { border-right: none; padding-right: 0; }
+
+.tria-stat .label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.tria-stat .value {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 800;
+    margin-top: 0.6rem;
+}
+
+.tria-stat .value .unit {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.tria-stat .sub {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin-top: 0.6rem;
+    line-height: 1.5;
+}
+
+.tria-result-cta {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.tria-form-hint {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 0.9rem;
+}
+
+/* ---------- AUTHORITY ---------- */
+.tria-authority {
+    padding: 90px 0;
+    background: linear-gradient(135deg, #396bad 0%, #2a4d7a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.tria-authority::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50m-40 0a40,40 0 1,0 80,0a40,40 0 1,0 -80,0' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+.tria-authority-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.tria-authority-inner h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+}
+
+.tria-authority-inner p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    margin-top: 1.25rem;
+}
+
+.tria-badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1.75rem;
+}
+
+.tria-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+}
+
+/* ---------- FINAL CTA ---------- */
+.cta-tria {
+    padding: 100px 0;
+    background: var(--white);
+    text-align: center;
+}
+
+.cta-tria .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-tria .cta-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #333;
+    line-height: 1.25;
+}
+
+.cta-tria .cta-content p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin: 1.5rem 0 2.25rem;
+}
+
+.cta-tria .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+    .hero-content-tria {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text-tria h1 { font-size: 2.6rem; }
+    .hero-text-tria p { max-width: 100%; margin: 0 auto; }
+    .tria-cta-row { justify-content: center; }
+    .tria-panel { margin: 0 auto; }
+
+    .tria-pain-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .tria-pain-text p { margin-left: auto; margin-right: auto; }
+
+    .tria-steps-grid { grid-template-columns: 1fr; }
+
+    .tria-stats-panel { grid-template-columns: 1fr; gap: 1.75rem; }
+    .tria-stat {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        padding: 0 0 1.5rem 0;
+    }
+    .tria-stat:last-child { border-bottom: none; padding-bottom: 0; }
+}
+
+@media (max-width: 768px) {
+    .tria-hero { min-height: auto; padding: 120px 0 60px; }
+    .hero-text-tria h1 { font-size: 2.1rem; }
+    .hero-text-tria p { font-size: 1rem; }
+
+    .tria-pain-text h2 { font-size: 1.7rem; }
+    .tria-authority-inner h2 { font-size: 1.6rem; }
+    .cta-tria .cta-content h2 { font-size: 1.8rem; }
+    .cta-tria .cta-buttons { flex-direction: column; }
+    .cta-tria .cta-buttons .btn { width: 100%; }
+}
+
+/* ---------- Fade-in animations ---------- */
+.tria-fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.tria-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tria-fade-in.delay-1 { transition-delay: 0.1s; }
+.tria-fade-in.delay-2 { transition-delay: 0.2s; }
+.tria-fade-in.delay-3 { transition-delay: 0.3s; }
