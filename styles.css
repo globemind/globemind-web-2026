@@ -481,6 +481,29 @@ body {
     width: 100%;
 }
 
+.feature-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(57, 107, 173, 0.12), rgba(121, 169, 214, 0.12));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.feature-icon svg {
+    width: 32px;
+    height: 32px;
+    color: var(--primary-blue);
+}
+
+.value-card:hover .feature-icon {
+    background: linear-gradient(135deg, rgba(57, 107, 173, 0.2), rgba(121, 169, 214, 0.2));
+    transform: scale(1.08);
+}
+
 .card-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
