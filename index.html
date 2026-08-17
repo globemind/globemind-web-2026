@@ -416,6 +416,16 @@
                 <button type="submit" class="btn btn-submit">Enviar y agendar una llamada</button>
                 <div class="form-message" id="formMessage"></div>
             </form>
+            <script>
+                document.getElementById("contactForm").addEventListener("submit", function(e) {
+                // Este evento se dispara al enviar. Si usás fetch/AJAX en vez de submit
+                // tradicional, moverlo al callback de éxito de la respuesta.
+                gtag('event', 'generate_lead', {
+                    'event_category': 'formulario_contacto',
+                    'event_label': window.location.pathname
+                });
+                });
+            </script>
         </div>
     </section>
 
