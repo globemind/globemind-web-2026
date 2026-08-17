@@ -381,48 +381,40 @@
             <p class="section-description fade-in">
                 No hace falta que tengas el proyecto 100% definido. Contanos el problema y te ayudamos a encontrar la solución más simple y rentable.
             </p>
-            <form class="contact-form fade-in" id="contactForm">
-                <!-- <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Nombre *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                </div>
+            <form class="contact-form fade-in" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="bce9fc72-6ece-4d31-bf62-332683cfebf0">
+                <input type="hidden" name="subject" value="Nuevo lead desde globemind.com">
+
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="company">Empresa</label>
-                        <input type="text" id="company" name="company">
+                        <label for="nombre">Nombre y empresa *</label>
+                        <input type="text" id="nombre" name="nombre_empresa" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Teléfono</label>
-                        <input type="tel" id="phone" name="phone">
+                        <label for="telefono">Teléfono / WhatsApp *</label>
+                        <input type="tel" id="telefono" name="telefono" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="service">Servicio de interés *</label>
-                    <select id="service" name="service" required>
-                        <option value="">Selecciona un servicio</option>
-                        <option value="desarrollo-mobile">Desarrollo Mobile</option>
-                        <option value="integracion-ia">Integración de IA</option>
-                        <option value="consultoria-tecnica">Consultoría Técnica</option>
-                        <option value="desarrollo-web">Desarrollo Web</option>
-                        <option value="automatizaciones">Automatizaciones</option>
-                        <option value="cloud-devops">Cloud & DevOps</option>
-                        <option value="others">Otros</option>
+                    <label for="rubro">Rubro *</label>
+                    <select id="rubro" name="rubro" required>
+                        <option value="">Seleccioná una opción</option>
+                        <option value="Comercio">Comercio</option>
+                        <option value="Logística">Logística</option>
+                        <option value="Servicios">Servicios</option>
+                        <option value="Industria">Industria</option>
+                        <option value="Otro">Otro</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="message">Mensaje *</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <label for="problema">¿Qué te gustaría resolver? *</label>
+                    <textarea id="problema" name="problema" rows="5" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-submit">Enviar Mensaje</button>
-                <div class="form-message" id="formMessage"></div> -->
-                
-                <a href="https://forms.gle/HwxZTKRF1AynkFtF8" class="btn btn-submit" target="_blank" style="display:inline-block;padding:1rem 2.2rem;border-radius:40px;background:linear-gradient(90deg,#396bad 0%,#79a9d6 100%);color:#fff;font-weight:600;text-align:center;text-decoration:none;box-shadow:0 2px 10px 0 rgba(8,141,255,0.12),0 2px 8px rgba(0,230,186,0.11);border:none;transition:background 0.3s,box-shadow 0.3s,transform 0.12s;cursor:pointer;font-size:1.1rem;">Formulario de contacto</a>
+
+                <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+                <button type="submit" class="btn btn-submit">Enviar y agendar una llamada</button>
+                <div class="form-message" id="formMessage"></div>
             </form>
         </div>
     </section>
