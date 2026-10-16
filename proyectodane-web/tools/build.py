@@ -140,10 +140,11 @@ def app_card(a):
     elif a.get("etiqueta"):
         et = f'<span class="tag reco">{esc(a["etiqueta"])}</span>'
     et = f'<div class="tags">{et}</div>' if et else ""
+    play = f'<a class="text-link" href="{esc(a["play"])}" target="_blank" rel="noopener">Descargar en Google Play<span class="sr-only"> (se abre en una pestaña nueva)</span></a>' if a.get("play") else ""
     return f'''<article class="app" data-categorias="{esc("|".join(cats))}">
 <div class="app-top"><div class="app-icon" style="--c:{color}"><span aria-hidden="true">{esc(a["nombre"][0])}</span><img src="{a["icono_local"]}" alt="" loading="lazy" width="72" height="72"></div><div class="app-title">{et}<h3>{esc(a["nombre"])}</h3></div></div>
 <p>{esc(a["descripcion"])}</p>
-<div class="tags">{tags}</div>
+<div class="tags">{tags}</div>{play}
 </article>'''
 
 
@@ -163,9 +164,8 @@ for slug, col in destacadas:
 
 IMPACTO = [("20", "aplicaciones"), ("+300 mil", "descargas"), ("150", "instituciones que las usan"), ("13", "años de trabajo")]
 metrics = "".join(f'<div class="metric"><strong>{n}</strong><span>{l}</span></div>' for n, l in IMPACTO)
-# TODO (pendiente #1): logos reales de aliados
-ALIADOS = ["GlobeMind", "DonWeb", "intive", "Globant", "GlobalLogic", "Q Services"]
-allies = "".join(f'<div class="ally">[Logo {a}]</div>' for a in ALIADOS)
+ALIADOS = [("Q Services", "qservices.jpg"), ("GlobeMind", "globemind.png"), ("intive", "intive.svg"), ("Globant", "globant.svg"), ("GlobalLogic", "globallogic.png"), ("Nybble Group", "nybble.png"), ("ReservIT", "reservit.png")]
+allies = "".join(f'<div class="ally"><img src="assets/img/aliados/{f}" alt="{esc(n)}" loading="lazy" height="48"></div>' for n, f in ALIADOS)
 
 form = '''<form class="form" id="form-contacto" novalidate>
 <label>Nombre<input type="text" name="nombre" autocomplete="name" required></label>
@@ -195,7 +195,15 @@ index_body = f'''<section id="inicio" class="hero container">
 </section>
 
 <section id="el-proyecto" class="section alt"><div class="container split">
-<div class="ph-photo" role="img" aria-label="Espacio reservado para la foto del equipo"><span>Foto del equipo</span></div>
+<div class="hero-art" role="img" aria-label="Tablet con la aplicación Dibugrama rodeada de íconos de las aplicaciones del Proyecto Dane">
+<span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+<img class="tablet" src="assets/img/foto-tablet-dibugrama.jpg" width="599" height="409" alt="" loading="lazy">
+<img class="ico i1" src="assets/img/apps/sonigrama.jpg" width="150" height="150" alt="" loading="lazy">
+<img class="ico i2" src="assets/img/apps/emocionalmente.jpg" width="150" height="150" alt="" loading="lazy">
+<img class="ico i3" src="assets/img/apps/grupolandia.jpg" width="150" height="150" alt="" loading="lazy">
+<img class="ico i4" src="assets/img/apps/superapp.jpg" width="150" height="150" alt="" loading="lazy">
+<span class="chip c1">100% gratuitas</span><span class="chip c2">+300 mil descargas</span>
+</div>
 <div class="split-text"><span class="eyebrow">El proyecto</span><h2>Educación y tecnología, trabajando juntas</h2>
 <p>Especialistas en educación y programadores trabajan en conjunto para crear aplicaciones adaptadas a las necesidades concretas de quienes las usan. Integramos el software a la educación para innovar en la manera de enseñar contenidos.</p>
 <a class="text-link" href="el-proyecto.html" style="align-self:flex-start">Conocé nuestra historia</a></div>
@@ -278,7 +286,10 @@ skills = ["Funciones ejecutivas", "Memoria", "Atención", "Lenguaje", "Lectura y
 skills_html = "".join(f'<span style="--c:{PALETA[i % 6]}">{s}</span>' for i, s in enumerate(skills))
 chips = '<button class="chip" type="button" data-cat="" aria-pressed="true">Todas</button>' + "".join(
     f'<button class="chip" type="button" data-cat="{esc(c)}" aria-pressed="false">{esc(c)}</button>' for c in CATS)
-cards_html = "\n".join(app_card(a) for a in apps)
+# Apps visibles en aplicaciones.html (el resto sigue en data/apps.json pero queda oculto)
+VISIBLES = {"como-pago", "emocionalmente", "lsa-familia-lengua-senas-argentina-apple-store", "aplicacionlsaenfamilia", "comunicat", "sonigrama"}
+apps_vis = [a for a in apps if a["slug"] in VISIBLES]
+cards_html = "\n".join(app_card(a) for a in apps_vis)
 
 apps_body = f'''<section class="page-head simple container">
 <nav class="crumbs" aria-label="Ruta de navegación"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span>Aplicaciones</span></nav>
@@ -293,14 +304,14 @@ apps_body = f'''<section class="page-head simple container">
 </section>
 
 <section class="notice"><div class="container">
-<div class="notice-text"><h2>Estamos actualizando nuestras apps en Google Play</h2><p>Desde el 31 de agosto, Google Play exige cumplir requisitos de “API objetivo” por seguridad, privacidad y rendimiento. Estamos recabando la información para volver a publicar todas las apps en la tienda de Proyecto DANE. Por ahora podés descargar: Como pago, LSA en Familia, Emocionalmente, Superapp y Desafíos Más y Menos. En Apple, está disponible “LSA en Familia”.</p></div>
-<div class="stores"><a href="https://play.google.com/store/apps/developer?id=Proyecto+DANE" target="_blank" rel="noopener" aria-label="Disponible en Google Play"><img src="assets/img/badge-google-play.png" alt="Disponible en Google Play"></a><a href="https://apps.apple.com/us/app/lsa-en-familia/id1552917307" target="_blank" rel="noopener" aria-label="Descargar LSA en Familia en el App Store"><img src="assets/img/badge-app-store.png" alt="Descargar en el App Store"></a></div>
+<div class="notice-text"><h2>Descargá las apps, es gratis</h2><p>Todas las aplicaciones del Proyecto Dane son gratuitas. Encontralas en Google Play y en el App Store.</p></div>
+<div class="stores"><a href="https://play.google.com/store/apps/developer?id=Proyecto+DANE" target="_blank" rel="noopener" aria-label="Disponible en Google Play"><img src="assets/img/badge-google-play.png" alt="Disponible en Google Play"></a><a href="https://apps.apple.com/us/developer/fundaci%C3%B3n-tinc/id1552917309" target="_blank" rel="noopener" aria-label="Descargar en el App Store (se abre en una pestaña nueva)"><img src="assets/img/badge-app-store.png" alt="Descargar en el App Store"></a></div>
 </div></section>
 
 <section id="listado" class="section container stack" style="gap:32px">
 <div class="head"><span class="eyebrow">Todas las aplicaciones</span><h2>Elegí por categoría</h2></div>
 <div class="filters" role="group" aria-label="Filtrar por categoría">{chips}</div>
-<p class="lead" id="apps-count" role="status" aria-live="polite" style="font-size:16px">{len(apps)} aplicaciones</p>
+<p class="lead" id="apps-count" role="status" aria-live="polite" style="font-size:16px">{len(apps_vis)} aplicaciones</p>
 <div class="apps">
 {cards_html}
 </div>
