@@ -1,0 +1,410 @@
+[
+  {
+    "nombre": "Como pago",
+    "slug": "como-pago",
+    "url": "https://www.proyectodane.org/aplicacion/como-pago/",
+    "descripcion": "Aprender el manejo del dinero con monedas y billetes con fotos reales de la Argentina. Pensada como apoyo a las dificultades de las personas con discapacidad intelectual a la hora de utilizar el dinero y pagar.",
+    "categorias": [
+      "Académicas-funcionales",
+      "Destrezas auditivas y visuales"
+    ],
+    "etiqueta": "Nueva app",
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2023/06/Captura-de-pantalla-2023-06-15-092452-2-150x150.png",
+    "icono_local": "assets/img/apps/como-pago.png"
+  },
+  {
+    "nombre": "Emocionalmente",
+    "slug": "emocionalmente",
+    "url": "https://www.proyectodane.org/aplicacion/emocionalmente/",
+    "descripcion": "Se enfoca en que las personas de todas las edades aprendan las emociones, las reconozcan en el otro, las asocien en situaciones de la vida cotidiana y pongan en práctica formas de manejarlas.",
+    "categorias": [
+      "Comunicación",
+      "Habilidades sociales y emocionales"
+    ],
+    "etiqueta": "Nueva app",
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2022/05/car%C3%A1tula-store-google-150x150.jpg",
+    "icono_local": "assets/img/apps/emocionalmente.jpg"
+  },
+  {
+    "nombre": "LSA en Familia (App Store)",
+    "slug": "lsa-familia-lengua-senas-argentina-apple-store",
+    "url": "https://www.proyectodane.org/aplicacion/lsa-familia-lengua-senas-argentina-apple-store/",
+    "descripcion": "Favorece la comunicación a través de señas básicas de Lengua de Señas Argentina (LSA) en las familias con niños sordos. Versión para Apple.",
+    "categorias": [],
+    "etiqueta": "Nueva app",
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2021/04/LSA-IOS-150x150.png",
+    "icono_local": "assets/img/apps/lsa-familia-lengua-senas-argentina-apple-store.png"
+  },
+  {
+    "nombre": "LSA en Familia",
+    "slug": "aplicacionlsaenfamilia",
+    "url": "https://www.proyectodane.org/aplicacion/aplicacionlsaenfamilia/",
+    "descripcion": "Favorece la comunicación a través de señas básicas de Lengua de Señas Argentina (LSA) en las familias con niños sordos.",
+    "categorias": [
+      "Académicas-funcionales",
+      "Comunicación"
+    ],
+    "etiqueta": "Nueva app",
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2018/09/logo-150x150.png",
+    "icono_local": "assets/img/apps/aplicacionlsaenfamilia.png"
+  },
+  {
+    "nombre": "Habilmente",
+    "slug": "aplicacionhabilmente",
+    "url": "https://www.proyectodane.org/aplicacion/aplicacionhabilmente/",
+    "descripcion": "Permite evaluar y entrenar en habilidades mentalistas. Cuenta con un sistema de registro de evaluados y evaluadores.",
+    "categorias": [
+      "Comunicación",
+      "Habilidades sociales y emocionales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2017/08/unnamed-1-150x150.png",
+    "icono_local": "assets/img/apps/aplicacionhabilmente.png"
+  },
+  {
+    "nombre": "Comunicador",
+    "slug": "comunicador",
+    "url": "https://www.proyectodane.org/aplicacion/comunicador/",
+    "descripcion": "Potencia las fortalezas de las personas con TEA como hábiles aprendices visuales. Funciona como un sistema alternativo y/o aumentativo de comunicación.",
+    "categorias": [
+      "Académicas-funcionales",
+      "Destrezas auditivas y visuales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2017/08/App-Comunicador-150x150.png",
+    "icono_local": "assets/img/apps/comunicador.png"
+  },
+  {
+    "nombre": "Manejo del Dinero",
+    "slug": "manejo-del-dinero",
+    "url": "https://www.proyectodane.org/aplicacion/manejo-del-dinero/",
+    "descripcion": "Enseña las monedas y billetes de la Argentina, estimula su identificación y el uso en situaciones de compra y venta, con y sin vuelto.",
+    "categorias": [
+      "Académicas-funcionales",
+      "Destrezas auditivas y visuales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2017/06/00_dane_manejodinero-150x150.jpg",
+    "icono_local": "assets/img/apps/manejo-del-dinero.jpg"
+  },
+  {
+    "nombre": "Superapp",
+    "slug": "superapp",
+    "url": "https://www.proyectodane.org/aplicacion/superapp/",
+    "descripcion": "Pensada y diseñada para que los niños con síndrome de Down jueguen y aprendan realizando las compras en el supermercado.",
+    "categorias": [
+      "Comunicación",
+      "Habilidades sociales y emocionales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2016/10/00_dane_super-150x150.jpg",
+    "icono_local": "assets/img/apps/superapp.jpg"
+  },
+  {
+    "nombre": "ISay",
+    "slug": "isay",
+    "url": "https://www.proyectodane.org/aplicacion/isay/",
+    "descripcion": "Permite a las personas con dificultades de comunicación conectarse con sus familiares, amigos o incluso sus médicos.",
+    "categorias": [
+      "Académicas-funcionales",
+      "Comunicación"
+    ],
+    "etiqueta": "Recomendada por Dane",
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2017/11/Isay-150x150.png",
+    "icono_local": "assets/img/apps/isay.png"
+  },
+  {
+    "nombre": "Habla Fácil Diego Dice",
+    "slug": "habla-facil-diego-dice",
+    "url": "https://www.proyectodane.org/aplicacion/habla-facil-diego-dice/",
+    "descripcion": "Enseña a los niños con TEA los elementos básicos de la comunicación y los estimula a comunicarse.",
+    "categorias": [
+      "Comunicación"
+    ],
+    "etiqueta": "Recomendada por Dane",
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2018/06/3-150x150.png",
+    "icono_local": "assets/img/apps/habla-facil-diego-dice.png"
+  },
+  {
+    "nombre": "Sígueme",
+    "slug": "aplicacacionsigueme",
+    "url": "https://www.proyectodane.org/aplicacion/aplicacacionsigueme/",
+    "descripcion": "Potencia la atención y la comunicación de personas con TEA.",
+    "categorias": [
+      "Académicas-funcionales",
+      "Comunicación"
+    ],
+    "etiqueta": "Recomendada por Dane",
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2018/06/unnamed-150x150.png",
+    "icono_local": "assets/img/apps/aplicacacionsigueme.png"
+  },
+  {
+    "nombre": "Conversador",
+    "slug": "conversador",
+    "url": "https://www.proyectodane.org/aplicacion/conversador/",
+    "descripcion": "Facilita la transmisión de conceptos de manera dinámica y rápida a través del uso de elementos gráficos.",
+    "categorias": [
+      "Comunicación",
+      "Habilidades sociales y emocionales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2016/04/00_dane_conversador-150x150.jpg",
+    "icono_local": "assets/img/apps/conversador.jpg"
+  },
+  {
+    "nombre": "Tuli emociones",
+    "slug": "tuli-emociones",
+    "url": "https://www.proyectodane.org/aplicacion/tuli-emociones/",
+    "descripcion": "Busca el desarrollo de la empatía del niño con el personaje Tuli. Reconocimiento de emociones y sentimientos.",
+    "categorias": [
+      "Comunicación",
+      "Habilidades sociales y emocionales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2016/04/App-Tuli-150x150.png",
+    "icono_local": "assets/img/apps/tuli-emociones.png"
+  },
+  {
+    "nombre": "Jugando con las vocales",
+    "slug": "jugando-con-las-vocales",
+    "url": "https://www.proyectodane.org/aplicacion/jugando-con-las-vocales/",
+    "descripcion": "Desarrolla nociones de lecto-escritura inicial: asociación fonema-grafema y grafomotricidad.",
+    "categorias": [
+      "Académicas-funcionales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2016/04/00_dane_vocales-150x150.jpg",
+    "icono_local": "assets/img/apps/jugando-con-las-vocales.jpg"
+  },
+  {
+    "nombre": "Desafíos Más y Menos",
+    "slug": "desafios-mas-y-menos",
+    "url": "https://www.proyectodane.org/aplicacion/desafios-mas-y-menos/",
+    "descripcion": "Desarrolla la inteligencia lógico-matemática, las habilidades cognitivas y los aprendizajes instrumentales.",
+    "categorias": [
+      "Académicas-funcionales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2016/04/00_dane_masmenos-150x150.jpg",
+    "icono_local": "assets/img/apps/desafios-mas-y-menos.jpg"
+  },
+  {
+    "nombre": "Números en acción",
+    "slug": "numeros-en-accion",
+    "url": "https://www.proyectodane.org/aplicacion/numeros-en-accion/",
+    "descripcion": "Desarrolla habilidades cognitivas y aprendizajes instrumentales.",
+    "categorias": [
+      "Académicas-funcionales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2016/04/N%C3%BAmeros-en-acci%C3%B3n-1-150x150.bmp",
+    "icono_local": "assets/img/apps/numeros-en-accion.bmp"
+  },
+  {
+    "nombre": "El juego de los opuestos",
+    "slug": "el-juego-de-los-opuestos",
+    "url": "https://www.proyectodane.org/aplicacion/el-juego-de-los-opuestos/",
+    "descripcion": "Potencia la observación, la atención visual y la comparación entre elementos.",
+    "categorias": [
+      "Académicas-funcionales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2016/04/00_dane_opuestos-150x150.jpg",
+    "icono_local": "assets/img/apps/el-juego-de-los-opuestos.jpg"
+  },
+  {
+    "nombre": "Parejas de mascotas",
+    "slug": "parejas-de-mascotas",
+    "url": "https://www.proyectodane.org/aplicacion/parejas-de-mascotas/",
+    "descripcion": "Desarrolla habilidades cognitivas, observación, reconocimiento de imágenes y memoria.",
+    "categorias": [
+      "Académicas-funcionales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2016/04/00_dane_parejamscotas-150x150.jpg",
+    "icono_local": "assets/img/apps/parejas-de-mascotas.jpg"
+  },
+  {
+    "nombre": "Tarjetas educativas en español",
+    "slug": "tarjetas-educativas-espanol",
+    "url": "https://www.proyectodane.org/aplicacion/tarjetas-educativas-espanol/",
+    "descripcion": "Permite aprender nuevas palabras, tanto a los hispanohablantes como a los niños que recién empiezan con el español.",
+    "categorias": [
+      "Académicas-funcionales"
+    ],
+    "etiqueta": "Recomendada por Dane",
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2016/04/Nueva-imagen-42-150x150.bmp",
+    "icono_local": "assets/img/apps/tarjetas-educativas-espanol.bmp"
+  },
+  {
+    "nombre": "Siluetas OA",
+    "slug": "siluetas-oa",
+    "url": "https://www.proyectodane.org/aplicacion/siluetas-oa/",
+    "descripcion": "Trabaja la atención mediante siluetas: hay que seleccionar la imagen igual al modelo.",
+    "categorias": [
+      "Académicas-funcionales"
+    ],
+    "etiqueta": "Recomendada por Dane",
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2016/04/Nueva-imagen-51-150x150.bmp",
+    "icono_local": "assets/img/apps/siluetas-oa.bmp"
+  },
+  {
+    "nombre": "OTTAA Project",
+    "slug": "ottaa-project",
+    "url": "https://www.proyectodane.org/aplicacion/ottaa-project/",
+    "descripcion": "Apunta a ser el soporte comunicacional de personas que no pueden hablar o tienen dificultad para hacerlo.",
+    "categorias": [
+      "Académicas-funcionales"
+    ],
+    "etiqueta": "Recomendada por Dane",
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2016/04/logo-150x150.bmp",
+    "icono_local": "assets/img/apps/ottaa-project.bmp"
+  },
+  {
+    "nombre": "Día a día",
+    "slug": "diaadia-fundacionorange",
+    "url": "https://www.proyectodane.org/aplicacion/diaadia-fundacionorange/",
+    "descripcion": "Diario visual pensado especialmente para personas con autismo o dificultades de comunicación.",
+    "categorias": [
+      "Académicas-funcionales"
+    ],
+    "etiqueta": "Recomendada por Dane",
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2018/06/unnamed-1-150x150.png",
+    "icono_local": "assets/img/apps/diaadia-fundacionorange.png"
+  },
+  {
+    "nombre": "Comunicador Personal Adaptable (CPA)",
+    "slug": "comunicador-personal-adaptablecpa",
+    "url": "https://www.proyectodane.org/aplicacion/comunicador-personal-adaptablecpa/",
+    "descripcion": "Sistema de comunicación para personas con problemas graves de comunicación.",
+    "categorias": [
+      "Comunicación"
+    ],
+    "etiqueta": "Recomendada por Dane",
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2018/06/unnamed-2-150x150.png",
+    "icono_local": "assets/img/apps/comunicador-personal-adaptablecpa.png"
+  },
+  {
+    "nombre": "ABC Autismo",
+    "slug": "abc-autismo",
+    "url": "https://www.proyectodane.org/aplicacion/abc-autismo/",
+    "descripcion": "Ayuda en el aprendizaje de los niños autistas a través de actividades divertidas.",
+    "categorias": [
+      "Académicas-funcionales"
+    ],
+    "etiqueta": "Recomendada por Dane",
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2018/06/1-2-150x150.png",
+    "icono_local": "assets/img/apps/abc-autismo.png"
+  },
+  {
+    "nombre": "Sonigrama",
+    "slug": "sonigrama",
+    "url": "https://www.proyectodane.org/aplicacion/sonigrama/",
+    "descripcion": "Desarrolla el conocimiento musical, las habilidades cognitivas y los aprendizajes instrumentales.",
+    "categorias": [
+      "Académicas-funcionales",
+      "Destrezas auditivas y visuales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2016/01/00_dane_sonigrama-150x150.jpg",
+    "icono_local": "assets/img/apps/sonigrama.jpg"
+  },
+  {
+    "nombre": "Jugamos todos",
+    "slug": "jugamos-todos",
+    "url": "https://www.proyectodane.org/aplicacion/jugamos-todos/",
+    "descripcion": "Desarrolla la inteligencia lingüístico-verbal, las habilidades cognitivas y los aprendizajes instrumentales.",
+    "categorias": [
+      "Académicas-funcionales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2015/12/00_dane_juguemos_v2-150x150.jpg",
+    "icono_local": "assets/img/apps/jugamos-todos.jpg"
+  },
+  {
+    "nombre": "Dibugrama",
+    "slug": "dibugrama",
+    "url": "https://www.proyectodane.org/aplicacion/dibugrama/",
+    "descripcion": "Desarrolla la inteligencia visual y espacial y las habilidades cognitivas relacionadas con el conocimiento del entorno físico.",
+    "categorias": [
+      "Académicas-funcionales",
+      "Destrezas auditivas y visuales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2015/12/00_dane_dibugrama-150x150.jpg",
+    "icono_local": "assets/img/apps/dibugrama.jpg"
+  },
+  {
+    "nombre": "Opuestolandia",
+    "slug": "opuestolandia",
+    "url": "https://www.proyectodane.org/aplicacion/opuestolandia/",
+    "descripcion": "Estimula el área cognitiva. Permite reconocer conceptos como alto y bajo, grande y chico, muchos y pocos, pesado y liviano.",
+    "categorias": [
+      "Académicas-funcionales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2015/12/Opuestolandia-150x150.jpg",
+    "icono_local": "assets/img/apps/opuestolandia.jpg"
+  },
+  {
+    "nombre": "Grupolandia",
+    "slug": "grupolandia",
+    "url": "https://www.proyectodane.org/aplicacion/grupolandia/",
+    "descripcion": "Se basa en la clasificación de colecciones de objetos: frutas, juguetes, vajilla, útiles escolares.",
+    "categorias": [
+      "Académicas-funcionales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2015/12/00_dane_grupolandia-150x150.jpg",
+    "icono_local": "assets/img/apps/grupolandia.jpg"
+  },
+  {
+    "nombre": "Burbujo",
+    "slug": "burbujo",
+    "url": "https://www.proyectodane.org/aplicacion/burbujo/",
+    "descripcion": "Desarrolla habilidades cognitivas, observación, seguimiento y atención visual, y coordinación visomotora.",
+    "categorias": [
+      "Académicas-funcionales",
+      "Destrezas auditivas y visuales"
+    ],
+    "etiqueta": null,
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2015/12/00_dane_burbujo-150x150.jpg",
+    "icono_local": "assets/img/apps/burbujo.jpg"
+  },
+  {
+    "nombre": "Proyecto emociones",
+    "slug": "proyecto-emociones-universidaddevalparaiso",
+    "url": "https://www.proyectodane.org/aplicacion/proyecto-emociones-universidaddevalparaiso/",
+    "descripcion": "Apoya el desarrollo de la empatía en niños y niñas dentro del espectro del autismo.",
+    "categorias": [
+      "Habilidades sociales y emocionales"
+    ],
+    "etiqueta": "Recomendada por Dane",
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2018/06/unnamed-3-150x150.png",
+    "icono_local": "assets/img/apps/proyecto-emociones-universidaddevalparaiso.png"
+  },
+  {
+    "nombre": "Dictapicto",
+    "slug": "dictapicto-fundacion-orange",
+    "url": "https://www.proyectodane.org/aplicacion/dictapicto-fundacion-orange/",
+    "descripcion": "Mejora el acceso a la información de las personas con TEA y facilita la comprensión del entorno.",
+    "categorias": [
+      "Comunicación"
+    ],
+    "etiqueta": "Recomendada por Dane",
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2018/06/unnamed-4-150x150.png",
+    "icono_local": "assets/img/apps/dictapicto-fundacion-orange.png"
+  },
+  {
+    "nombre": "Proyecto PECS",
+    "slug": "proyecto-pecs-universidaddevalparaiso",
+    "url": "https://www.proyectodane.org/aplicacion/proyecto-pecs-universidaddevalparaiso/",
+    "descripcion": "Apoya la comunicación aumentativa/alternativa, enfocada a personas con trastornos del espectro autista (TEA).",
+    "categorias": [
+      "Comunicación"
+    ],
+    "etiqueta": "Recomendada por Dane",
+    "icono": "https://www.proyectodane.org/wp-content/uploads/2018/06/unnamed-5-150x150.png",
+    "icono_local": "assets/img/apps/proyecto-pecs-universidaddevalparaiso.png"
+  }
+]
