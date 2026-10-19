@@ -64,6 +64,7 @@ def page(*, file, title, desc, body, active=None, scripts=()):
         cur = ' aria-current="page"' if active == key else ""
         return f'<a href="{href}"{cur}>{label}</a>'
     nav = "".join([
+        nav_a("Inicio", "index.html", "inicio"),
         nav_a("El proyecto", "el-proyecto.html", "proyecto"),
         nav_a("Aplicaciones", "aplicaciones.html", "apps"),
         nav_a("Contacto", f"{home}#contacto", None),
@@ -155,14 +156,14 @@ by_slug["aplicacionlsaenfamilia"] = next(a for a in apps if a["nombre"] == "LSA 
 feat = ""
 for slug, col in destacadas:
     a = by_slug[slug]
-    full = {"como-pago": "assets/img/apps/como-pago-home.png", "emocionalmente": a["icono_local"], "aplicacionlsaenfamilia": "assets/img/apps/lsa-home.png"}
+    full = {"como-pago": "assets/img/apps/como-pago-home.png", "emocionalmente": "assets/img/apps/emocionalmente-home.png", "aplicacionlsaenfamilia": "assets/img/apps/lsa-home.png"}
     if slug in full:
         cover = f'<div class="cover full"><img src="{full[slug]}" alt="" loading="lazy"></div>'
     else:
         cover = f'<div class="cover" style="background:{col}"><img src="{a["icono_local"]}" alt="" width="112" height="112"></div>'
     feat += f'''<article class="feature-card">{cover}<div class="body"><h3>{esc(a["nombre"])}</h3><p>{esc(a["descripcion"])}</p></div></article>'''
 
-IMPACTO = [("20", "aplicaciones"), ("+300 mil", "descargas"), ("150", "instituciones que las usan"), ("13", "años de trabajo")]
+IMPACTO = [("20", "aplicaciones"), ("+400 mil", "descargas"), ("150", "instituciones que las usan"), ("13", "años de trabajo")]
 metrics = "".join(f'<div class="metric"><strong>{n}</strong><span>{l}</span></div>' for n, l in IMPACTO)
 ALIADOS = [("Q Services", "qservices.jpg"), ("GlobeMind", "globemind.png"), ("intive", "intive.svg"), ("Globant", "globant.svg"), ("GlobalLogic", "globallogic.png"), ("Nybble Group", "nybble.png"), ("ReservIT", "reservit.png")]
 allies = "".join(f'<div class="ally"><img src="assets/img/aliados/{f}" alt="{esc(n)}" loading="lazy" height="48"></div>' for n, f in ALIADOS)
@@ -198,11 +199,11 @@ index_body = f'''<section id="inicio" class="hero container">
 <div class="hero-art" role="img" aria-label="Tablet con la aplicación Dibugrama rodeada de íconos de las aplicaciones del Proyecto Dane">
 <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
 <img class="tablet" src="assets/img/foto-tablet-dibugrama.jpg" width="599" height="409" alt="" loading="lazy">
-<img class="ico i1" src="assets/img/apps/sonigrama.jpg" width="150" height="150" alt="" loading="lazy">
-<img class="ico i2" src="assets/img/apps/emocionalmente.jpg" width="150" height="150" alt="" loading="lazy">
-<img class="ico i3" src="assets/img/apps/grupolandia.jpg" width="150" height="150" alt="" loading="lazy">
-<img class="ico i4" src="assets/img/apps/superapp.jpg" width="150" height="150" alt="" loading="lazy">
-<span class="chip c1">100% gratuitas</span><span class="chip c2">+300 mil descargas</span>
+<img class="ico i1" src="assets/img/apps/sonigrama.png" width="150" height="150" alt="" loading="lazy">
+<img class="ico i2" src="assets/img/apps/emocionalmente-home.png" width="150" height="150" alt="" loading="lazy">
+<img class="ico i3" src="assets/img/apps/lsa-home.png" width="150" height="150" alt="" loading="lazy">
+<img class="ico i4" src="assets/img/apps/como-pago-icon.jpg" width="150" height="150" alt="" loading="lazy">
+<span class="chip c1">100% gratuitas</span><span class="chip c2">+400 mil descargas</span>
 </div>
 <div class="split-text"><span class="eyebrow">El proyecto</span><h2>Educación y tecnología, trabajando juntas</h2>
 <p>Especialistas en educación y programadores trabajan en conjunto para crear aplicaciones adaptadas a las necesidades concretas de quienes las usan. Integramos el software a la educación para innovar en la manera de enseñar contenidos.</p>
@@ -318,7 +319,7 @@ apps_body = f'''<section class="page-head simple container">
 </section>'''
 
 pages = [
-    ("index.html", "Proyecto Dane | Tecnología para la inclusión", "Aplicaciones gratuitas para el aprendizaje de niños y jóvenes con discapacidad. Proyecto de Interés Social, Legislatura porteña.", index_body, None, ("contacto.js", "video.js")),
+    ("index.html", "Proyecto Dane | Tecnología para la inclusión", "Aplicaciones gratuitas para el aprendizaje de niños y jóvenes con discapacidad. Proyecto de Interés Social, Legislatura porteña.", index_body, "inicio", ("contacto.js", "video.js")),
     ("el-proyecto.html", "El proyecto | Proyecto Dane", "Desarrollo de aplicaciones para niños y jóvenes con discapacidad: qué hacemos, premios, equipo y tecnología aplicada.", proyecto_body, "proyecto", ()),
     ("aplicaciones.html", "Aplicaciones | Proyecto Dane", "Apps inclusivas, gratuitas e inéditas para quienes tienen alguna discapacidad. Filtrá por categoría.", apps_body, "apps", ("filtros-apps.js",)),
 ]
