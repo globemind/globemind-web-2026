@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Guías, casos de éxito y recursos prácticos para PyMEs argentinas que quieren digitalizar su operación sin complicarse.">
-    <meta property="og:title" content="Blog GlobeMind | Recursos para digitalizar tu PyME">
-    <meta property="og:description" content="Guías, casos de éxito y recursos prácticos para PyMEs argentinas que quieren digitalizar su operación sin complicarse.">
+    <meta name="description" content="Notas sobre datos, procesos y software a medida para dueños y gerentes de PyMEs argentinas. Ideas para decidir mejor.">
+    <meta property="og:title" content="Blog de GlobeMind | Ideas para que tu PyME decida mejor">
+    <meta property="og:description" content="Notas sobre datos, procesos y software a medida para dueños y gerentes de PyMEs argentinas. Ideas para decidir mejor.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://globemind.com/blog.html">
+    <meta property="og:image" content="https://globemind.com/img/GlobeMind-horizontal-grande.png">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Blog GlobeMind | Recursos para digitalizar tu PyME</title>
+    <meta name="twitter:title" content="Blog de GlobeMind | Ideas para que tu PyME decida mejor">
+    <meta name="twitter:description" content="Notas sobre datos, procesos y software a medida para dueños y gerentes de PyMEs argentinas. Ideas para decidir mejor.">
+    <meta name="twitter:image" content="https://globemind.com/img/GlobeMind-horizontal-grande.png">
+    <title>Blog de GlobeMind | Ideas para que tu PyME decida mejor</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog.css">
     <link rel="canonical" href="https://globemind.com/blog.html">
     <link rel="icon" type="image/png" href="img/globeMind_logo.png">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
-<body>
+<body class="blog-page">
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" aria-label="Principal">
         <div class="nav-container">
             <div class="logo">
                 <a href="index.html" class="logo-link">
@@ -43,8 +49,9 @@
                 </li>
                 <li><a href="index.html#clientes" class="nav-link">Clientes</a></li>
                 <li><a href="index.html#stack" class="nav-link">Stack</a></li>
+                <li><a href="blog.html" class="nav-link active" aria-current="page">Blog</a></li>
             </ul>
-            <a href="index.html#contacto" class="nav-cta">Trabajemos juntos</a>
+            <a href="index.html#contacto" class="nav-cta" data-track="trabajemos_juntos">Trabajemos juntos</a>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
@@ -53,36 +60,105 @@
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="page-hero">
-        <div class="hero-background">
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-        </div>
-        <div class="container">
-            <span class="page-eyebrow page-fade-in">Blog</span>
-            <h1 class="page-hero-title page-fade-in">Recursos para <span class="gradient-text">digitalizar</span> tu PyME</h1>
-            <p class="page-hero-subtitle page-fade-in">
-                Contenido práctico sobre software a medida, digitalización y automatización, pensado para dueños y responsables de PyMEs argentinas — sin jerga técnica innecesaria.
-            </p>
-        </div>
-    </section>
+    <main>
+        <!-- Portada -->
+        <section class="blog-hero">
+            <div class="blog-hero-ring" aria-hidden="true"></div>
+            <div class="blog-hero-disc" aria-hidden="true"></div>
+            <div class="container">
+                <span class="blog-tag">Blog de GlobeMind</span>
+                <h1 class="blog-hero-title">Ideas para que tu PyME <span class="gradient-text">decida</span> mejor</h1>
+                <p class="blog-hero-subtitle">Notas sobre datos, procesos y software a medida, escritas para dueños y gerentes de PyMEs argentinas. Sin jerga: hablamos de impacto en el negocio.</p>
+            </div>
+        </section>
 
-    <!-- Artículos (placeholder) -->
-    <section class="page-section page-section-alt">
-        <div class="container">
-            <p class="page-placeholder page-fade-in">[CONTENIDO PENDIENTE — grilla de artículos, ordenados por fecha, con imagen destacada, título y bajada de 1-2 líneas. Primeros 6 artículos ya definidos en el roadmap de contenido — se redactan en la siguiente etapa.]</p>
-        </div>
-    </section>
+        <!-- Artículo destacado -->
+        <section class="blog-section" aria-labelledby="destacado-titulo">
+            <div class="container">
+                <h2 class="blog-section-title" id="destacado-titulo">Artículo destacado</h2>
+                <article class="blog-card blog-featured">
+                    <div class="blog-featured-cover">
+                        <div class="blog-deco-ring" aria-hidden="true"></div>
+                        <div class="blog-deco-disc" aria-hidden="true"></div>
+                        <div class="blog-featured-cover-inner">
+                            <span class="blog-tag">Lecciones de F1 para tu PyME</span>
+                            <div class="blog-featured-cover-title" aria-hidden="true">Cada dato tiene un destino</div>
+                        </div>
+                    </div>
+                    <div class="blog-featured-body">
+                        <span class="blog-tag blog-tag-sm">Datos y decisiones</span>
+                        <h3 class="blog-featured-title">Qué puede copiar una PyME argentina de la F1</h3>
+                        <p class="blog-excerpt">Tres sugerencias de la Fórmula 1 para usar la información en tu empresa sin presupuesto de escudería: que cada dato tenga un destino, decidir con información y elegir dónde conviene un software a medida.</p>
+                        <p class="blog-meta"><time datetime="2026-11-17">17 de noviembre de 2026</time> · 5 min de lectura</p>
+                        <a href="blog/que-puede-copiar-una-pyme-argentina-de-la-f1.html" class="btn btn-primary">Leer el artículo</a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-    <!-- CTA -->
-    <section class="page-cta-banner page-fade-in">
-        <div class="container">
-            <h2>¿Tenés un problema puntual que resolver?</h2>
-            <a href="index.html#contacto" class="btn btn-primary">Hablemos</a>
-        </div>
-    </section>
+        <!-- Próximos artículos (sin enlace hasta que existan) -->
+        <section class="blog-section blog-section-last" aria-labelledby="proximos-titulo">
+            <div class="container">
+                <h2 class="blog-section-title" id="proximos-titulo">Próximos artículos</h2>
+                <p class="blog-section-lead">Lo que estamos preparando para las próximas semanas.</p>
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-upcoming-strip" aria-hidden="true">
+                            <div class="blog-deco-ring"></div>
+                            <div class="blog-deco-disc"></div>
+                        </div>
+                        <div class="blog-upcoming-body">
+                            <div class="blog-upcoming-head">
+                                <span class="blog-tag blog-tag-sm">Software a medida</span>
+                                <span class="blog-meta">Próximamente</span>
+                            </div>
+                            <h3 class="blog-upcoming-title">¿Software a medida o sistema ya armado?</h3>
+                            <p class="blog-excerpt">Las señales que ayudan a decidir qué conviene para tu operación.</p>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-upcoming-strip" aria-hidden="true">
+                            <div class="blog-deco-ring"></div>
+                            <div class="blog-deco-disc"></div>
+                        </div>
+                        <div class="blog-upcoming-body">
+                            <div class="blog-upcoming-head">
+                                <span class="blog-tag blog-tag-sm">Casos</span>
+                                <span class="blog-meta">Próximamente</span>
+                            </div>
+                            <h3 class="blog-upcoming-title">Trazabilidad: cuando el registro es una obligación</h3>
+                            <p class="blog-excerpt">Qué cambia en una empresa financiera cuando cada autorización queda registrada.</p>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-upcoming-strip" aria-hidden="true">
+                            <div class="blog-deco-ring"></div>
+                            <div class="blog-deco-disc"></div>
+                        </div>
+                        <div class="blog-upcoming-body">
+                            <div class="blog-upcoming-head">
+                                <span class="blog-tag blog-tag-sm">Automatización</span>
+                                <span class="blog-meta">Próximamente</span>
+                            </div>
+                            <h3 class="blog-upcoming-title">La brecha entre las PyMEs que automatizan y las que no</h3>
+                            <p class="blog-excerpt">Por qué la diferencia no es la tecnología, sino la decisión de arrancar.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Franja de contacto -->
+        <section class="blog-cta-band">
+            <div class="blog-deco-ring" aria-hidden="true"></div>
+            <div class="blog-deco-disc" aria-hidden="true"></div>
+            <div class="container">
+                <h2 class="blog-cta-title">¿Qué proceso de tu empresa necesita cambiar?</h2>
+                <p class="blog-cta-text">Charlemos 30 minutos. Contanos qué te está frenando y mapeamos juntos qué conviene resolver con herramientas estándar y qué conviene hacer a medida.</p>
+                <a href="index.html#contacto" class="btn btn-primary" data-track="quiero_simplificar_mi_negocio">Quiero simplificar mi negocio</a>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -103,6 +179,7 @@
                         <li><a href="index.html#servicios">Servicios</a></li>
                         <li><a href="index.html#clientes">Clientes</a></li>
                         <li><a href="index.html#stack">Stack</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -143,26 +220,6 @@
 
     <script src="script.js"></script>
 
-    <!-- Fade-in animation script for this page -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeElements = document.querySelectorAll('.page-fade-in');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-
-            fadeElements.forEach(el => observer.observe(el));
-        });
-    </script>
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQXN4FXRMS"></script>
     <script>
@@ -171,6 +228,13 @@
     gtag('js', new Date());
 
     gtag('config', 'G-MQXN4FXRMS');
+
+    // Medición de clics en los botones de contacto
+    document.querySelectorAll('[data-track]').forEach(function (el) {
+        el.addEventListener('click', function () {
+            gtag('event', 'cta_click', { cta_name: el.dataset.track, page_location: window.location.href });
+        });
+    });
     </script>
 </body>
 </html>
